@@ -18,7 +18,7 @@ export const PROJECTS = [
     description:
       "Official web presence for a government institution - a modern, accessible, high-performance platform serving thousands of students and faculty daily.",
     tags: ["React.js", "Node.js", "Tailwind CSS", "Full Stack"],
-    image: "/projects/gcon-nanded.png",
+    image: "https://res.cloudinary.com/afytkgjc/image/upload/v1784468265/gcon-nanded_t6nb6u.jpg",
     liveUrl: "https://gconnanded.in",
     year: "2025",
     role: "Full Stack Development",
@@ -31,7 +31,7 @@ export const PROJECTS = [
     description:
       "A complete digital ecosystem - consumer portal, admin dashboard, QR-based attendance, subscription management, multi-language support, analytics, and a Firebase-powered real-time backend.",
     tags: ["React.js", "Firebase", "i18next", "QR Tech", "GA4"],
-    image: "/projects/mane-mess.png",
+    image: "https://res.cloudinary.com/afytkgjc/image/upload/v1784468262/mane-mess_gj27vy.jpg",
     liveUrl: "https://manemess.in",
     year: "2025",
     role: "Full Stack Development",
@@ -44,7 +44,7 @@ export const PROJECTS = [
     description:
       "A modern e-commerce frontend designed for maximum engagement and conversion - performance-optimized with smooth transitions and responsive layouts.",
     tags: ["React.js", "Tailwind CSS", "REST API", "React Router"],
-    image: "/projects/herbs-magic.png",
+    image: "https://res.cloudinary.com/afytkgjc/image/upload/v1784468268/herbs-magic_q7i4nm.jpg",
     liveUrl: "https://www.theherbsmagic.com/",
     year: "2024",
     role: "Frontend Development",
@@ -57,7 +57,7 @@ export const PROJECTS = [
     description:
       "An intelligent tender management system with AI-driven document processing, keyword extraction, and automated candidate matching - deployed on serverless architecture.",
     tags: ["React.js", "FastAPI", "OpenAI API", "AWS Lambda"],
-    image: "/projects/maha-gps.png",
+    image: "https://res.cloudinary.com/afytkgjc/image/upload/v1784468261/maha-gps_nrhdfd.jpg",
     liveUrl: "https://www.mahagps.com/",
     year: "2025",
     role: "Full Stack + AI",
@@ -91,7 +91,7 @@ export const PROJECTS = [
     ],
     tags: ["Flutter", "React.js", "Node.js", "WebRTC", "WebSocket"],
     image:
-      "/projects/zoomtod.png",
+      "https://res.cloudinary.com/afytkgjc/image/upload/v1784468264/zoomtod_gl3o70.png",
     liveUrl: "https://play.google.com/store/apps/details?id=com.zoomtod.dhs",
     year: "2026",
     role: "Full Stack + Mobile Development",
@@ -109,7 +109,7 @@ export const PROJECTS = [
       "Delivered a scalable end-to-end shopping experience with 1,000+ active users across customer, seller, and delivery-agent roles.",
     ],
     tags: ["React.js", "ASP.NET Core", "SQL", "Razorpay", "Firebase"],
-    image: "/projects/it-is-my-town.png",
+    image: "https://res.cloudinary.com/afytkgjc/image/upload/v1784468136/ChatGPT_Image_Jul_19_2026_06_35_27_AM_km8vuu.png",
     liveUrl: "https://www.itismytown.com/",
     year: "2025",
     role: "Full Stack Development",
@@ -126,8 +126,26 @@ export const PROJECTS = [
       "Implemented an expert consultation booking flow, letting customers schedule and pay for one-on-one sessions with tarot practitioners.",
     ],
     tags: ["React.js", "E-commerce", "Courses", "Consultation Booking"],
-    image: "/projects/proj_tarushpranaa.png",
+    image: "https://res.cloudinary.com/afytkgjc/image/upload/v1784468266/proj_tarushpranaa_zk9qxt.png",
     liveUrl: "https://tarushpranaa.com/",
+    year: "2026",
+    role: "Full Stack Development",
+  },
+
+    {
+    id: "flygen",
+    title: "FlyGen",
+    category: "SaaS · AI",
+    subtitle: "AI-Powered Flyer & Template Generation Tool",
+    description:
+      "An intelligent flyer creation platform that auto-generates print-ready professional designs from user input, using AI image generation and dynamic SVG rendering.",
+    highlights: [
+      "Built a React.js interactive template editor with real-time preview alongside a Node.js backend handling AI API orchestration and the SVG rendering pipeline.",
+      "Supports multiple templates with one-click export as a high-quality image or SVG, so users go from prompt to print-ready design in a few clicks.",
+    ],
+    tags: ["React.js", "Node.js", "AI API Integration", "SVG Generation"],
+    image: "https://res.cloudinary.com/afytkgjc/image/upload/v1784467493/ChatGPT_Image_Jul_19_2026_06_24_45_AM_kdzgbb.png",
+    liveUrl: "https://flygen.achyutkr1122.workers.dev/",
     year: "2026",
     role: "Full Stack Development",
   },
@@ -143,8 +161,26 @@ export const PROJECTS = [
       "Implemented cart, wishlist, and account management alongside a promotional banner system for offers like free shipping and new product launches.",
     ],
     tags: ["React.js", "E-commerce", "Tailwind CSS", "Cart & Checkout"],
-    image: "/projects/proj_bbjkb.png",
+    image: "https://res.cloudinary.com/afytkgjc/image/upload/v1784468264/proj_bbjkb_iauuqt.png",
     liveUrl: "https://babajikibuti.com/home",
+    year: "2026",
+    role: "Full Stack Development",
+  },
+     {
+    id: "sitara-it",
+    title: "Sitara IT Innovations",
+    category: "SaaS · FinTech",
+    subtitle: "Core Banking Platform for Co-operatives & NBFCs",
+    description:
+      "An all-in-one core banking platform for co-operative societies and NBFCs, helping institutions digitize operations, manage compliance, and serve members with confidence.",
+    highlights: [
+      "Delivered a secure, NABARD & RCS-compliant core banking system with real-time transactions and multi-branch operations for day-to-day banking.",
+      "Built dedicated modules for PACS, Credit Societies, Housing Societies, and Employee Societies, each tailored to how that institution type actually operates.",
+      "Shipped Asia's first voice-enabled cooperative society software, purpose-built for blind and visually impaired members with multilingual voice interaction cutting transaction time by up to 90%.",
+    ],
+    tags: ["React.js", "Node.js", "Core Banking", "Compliance", "Multilingual"],
+    image: "https://res.cloudinary.com/afytkgjc/image/upload/v1784467141/ChatGPT_Image_Jul_19_2026_06_18_30_AM_vzudje.png",
+    liveUrl: "https://www.sitarait.com/",
     year: "2026",
     role: "Full Stack Development",
   },
@@ -161,7 +197,7 @@ export const PROJECTS = [
       "Delivered order management, settlements, commissions, invoicing, and dashboards across vendor and admin roles on a full Spring Boot backend.",
     ],
     tags: ["React.js", "Spring Boot", "PostgreSQL", "Multi-Vendor", "RBAC"],
-    image: "/projects/proj_agro.png",
+    image: "https://res.cloudinary.com/afytkgjc/image/upload/v1784468265/proj_agro_bes2gc.png",
     liveUrl: "https://gitest2.shop/",
     year: "2026",
     role: "Full Stack Development",
@@ -178,11 +214,49 @@ export const PROJECTS = [
       "Implemented campaign and community sections to showcase ongoing initiatives, CSR partnerships, and a media gallery highlighting the foundation's on-ground impact.",
     ],
     tags: ["React.js", "Payment Gateway", "Recurring Donations", "CMS"],
-    image: "/projects/proj_ngo.png",
+    image: "https://res.cloudinary.com/afytkgjc/image/upload/v1784468267/proj_ngo_vaj9at.png",
     liveUrl: "https://mahipatsinhfoundation.org/",
     year: "2026",
     role: "Full Stack Development",
   },
+
+   {
+    id: "godrej-safety",
+    title: "Godrej Safety",
+    category: "Website · Industrial Safety",
+    subtitle: "Plant Safety Management Portal",
+    description:
+      "A safety management portal built for Godrej's Shirval facility, giving the on-site safety department a central place to publish guidelines, log incidents, and keep staff aligned on workplace safety standards.",
+    highlights: [
+      "Built a digital safety guide covering plant protocols, PPE requirements, and hazard-specific checklists so staff always have the latest guidance on hand.",
+      "Implemented incident/observation reporting and tracking so safety issues can be logged, reviewed, and closed out with a clear audit trail.",
+      "Designed a clean, scannable dashboard layout suited to shop-floor and supervisor use on both desktop and mobile.",
+    ],
+    tags: ["React.js", "Tailwind CSS", "Safety Management", "Dashboard"],
+    image: "https://res.cloudinary.com/afytkgjc/image/upload/v1784465794/Screenshot_2026-07-19_055022_w8zsco.png",
+    liveUrl: "https://godrej-safety.vercel.app/",
+    year: "2026",
+    role: "Full Stack Development",
+  },
+  {
+    id: "planet-crusader",
+    title: "Planet Crusader",
+    category: "SaaS · NGO / Education",
+    subtitle: "NGO-Sponsor-Student Engagement Platform",
+    description:
+      "A platform connecting NGOs, sponsors, and students - letting sponsors donate resources to schools while students discover, register for, and schedule community and environmental activities.",
+    highlights: [
+      "Built a sponsorship flow where NGOs and sponsors can contribute funds or in-kind materials directly to partner schools.",
+      "Implemented student registration and scheduling for activities such as tree plantation drives and other community/environmental initiatives.",
+      "Designed role-based views for NGOs, sponsors, schools, and students so each group sees the actions relevant to them.",
+    ],
+    tags: ["React.js", "NGO Platform", "Scheduling", "Full Stack"],
+    image: "https://res.cloudinary.com/afytkgjc/image/upload/v1784466943/ChatGPT_Image_Jul_19_2026_06_15_10_AM_lbgply.png",
+    liveUrl: "https://planet-crusader-sponcer-frontend.vercel.app/",
+    year: "2026",
+    role: "Full Stack Development",
+  },
+
 ];
 
 export function getProjectById(id) {
@@ -204,7 +278,7 @@ const SERVICE_PROJECT_MAP = {
   "mobile-app-development": ["zoomtod", "bunny", "it-is-my-town"],
   "ui-ux-design": ["herbs-magic", "babaji-ki-buti", "tarushpranaa"],
   "ecommerce-development": ["herbs-magic", "agrovedant", "babaji-ki-buti", "tarushpranaa", "it-is-my-town"],
-  "custom-software-development": ["agrovedant", "mane-mess", "maha-gps"],
+  "custom-software-development": ["agrovedant", "mane-mess", "maha-gps", "godrej-safety"],
   "ai-automation-solutions": ["maha-gps", "zoomtod", "mane-mess"],
 };
 
