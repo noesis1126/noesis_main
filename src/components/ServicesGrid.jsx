@@ -90,26 +90,10 @@ export default function ServicesGrid({
                     </div>
                   )}
 
-                  {interactive ? (
-                    <div className="mt-5 flex items-center justify-between gap-3">
-                      <span className="text-sm font-medium text-accent">
-                        {isSelected ? "Showing related work \u2193" : "Tap to see related work"}
-                      </span>
-                      <Link
-                        to={`/services/${id}`}
-                        onClick={(e) => e.stopPropagation()}
-                        className="inline-flex shrink-0 items-center gap-1 text-sm font-medium text-ink-soft transition-colors hover:text-accent"
-                      >
-                        Details
-                        <ArrowUpRight size={15} />
-                      </Link>
-                    </div>
-                  ) : (
-                    <span className="mt-5 inline-flex items-center gap-1 text-sm font-medium text-accent transition-transform group-hover:translate-x-0.5">
-                      View details
-                      <ArrowUpRight size={15} />
-                    </span>
-                  )}
+                  <span className="mt-5 inline-flex items-center gap-1 text-sm font-medium text-accent transition-transform group-hover:translate-x-0.5">
+                    View details
+                    <ArrowUpRight size={15} />
+                  </span>
                 </>
               )}
             </div>
@@ -127,27 +111,9 @@ export default function ServicesGrid({
               isSelected ? "border-accent ring-2 ring-accent" : "border-line"
             }`}
           >
-            {interactive ? (
-              <div
-                role="button"
-                tabIndex={0}
-                aria-pressed={isSelected}
-                onClick={() => onServiceClick(id)}
-                onKeyDown={(e) => {
-                  if (e.key === "Enter" || e.key === " ") {
-                    e.preventDefault();
-                    onServiceClick(id);
-                  }
-                }}
-                className={cardClasses}
-              >
-                {cardInner}
-              </div>
-            ) : (
-              <Link to={`/services/${id}`} className={cardClasses}>
-                {cardInner}
-              </Link>
-            )}
+            <Link to={`/services/${id}`} className={cardClasses}>
+              {cardInner}
+            </Link>
           </motion.div>
         );
       })}
