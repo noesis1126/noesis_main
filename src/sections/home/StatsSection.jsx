@@ -35,13 +35,13 @@ export default function StatsSection() {
         variants={container}
         initial="hidden"
         whileInView="show"
-        viewport={{ once: true, amount: 0.4 }}
-        className="relative mx-auto grid max-w-content grid-cols-2 gap-8 px-6 py-14 md:grid-cols-4 md:px-10 md:py-20"
+        viewport={{ once: true, amount: 0, margin: "0px 0px -10% 0px" }}
+        className="relative mx-auto grid max-w-content grid-cols-2 gap-x-6 gap-y-8 px-6 py-12 sm:gap-8 md:grid-cols-4 md:px-10 md:py-20"
       >
         {stats.map((stat) => (
-          <motion.div key={stat.label} variants={item} className="flex flex-col gap-1">
-            <p className="font-display text-3xl font-semibold text-cream md:text-4xl">{stat.value}</p>
-            <p className="text-sm text-cream/60">{stat.label}</p>
+          <motion.div key={stat.label} variants={item} className="flex flex-col gap-1 border-l-2 border-cream/20 pl-3 sm:border-l-0 sm:pl-0">
+            <p className="font-display text-3xl font-semibold text-cream sm:text-4xl">{stat.value}</p>
+            <p className="text-xs text-cream/60 sm:text-sm">{stat.label}</p>
           </motion.div>
         ))}
       </motion.div>

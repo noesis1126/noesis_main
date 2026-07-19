@@ -24,7 +24,7 @@ export default function WorkDetail() {
     window.scrollTo(0, 0);
   }, [id]);
 
-  // Unknown project id — send back to the archive instead of a dead page.
+  // Unknown project id - send back to the archive instead of a dead page.
   if (!project) {
     return <Navigate to="/work" replace />;
   }
@@ -34,7 +34,7 @@ export default function WorkDetail() {
   return (
     <>
       <section className="border-b border-line bg-cream-soft">
-        <div className="mx-auto max-w-content px-6 py-16 md:px-10 md:py-20">
+        <div className="mx-auto max-w-content px-6 py-12 md:px-10 md:py-20">
           <Link
             to="/work"
             className="inline-flex items-center gap-1.5 text-sm font-medium text-ink-soft transition-colors hover:text-accent"
@@ -52,17 +52,17 @@ export default function WorkDetail() {
             <span className="text-xs font-semibold uppercase tracking-[0.18em] text-accent">
               {project.category}
             </span>
-            <h1 className="mt-3 text-3xl font-semibold tracking-tight text-ink md:text-5xl">
+            <h1 className="mt-3 text-[1.75rem] font-semibold leading-tight tracking-tight text-ink sm:text-3xl md:text-5xl">
               {project.title}
             </h1>
-            <p className="mt-2 text-lg text-ink-soft">{project.subtitle}</p>
+            <p className="mt-2 text-base text-ink-soft sm:text-lg">{project.subtitle}</p>
           </motion.div>
 
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, ease: "easeOut", delay: 0.1 }}
-            className="mt-8 grid max-w-2xl grid-cols-3 gap-6 border-t border-line pt-6"
+            className="mt-8 grid max-w-2xl grid-cols-3 gap-3 border-t border-line pt-6 sm:gap-6"
           >
             <div>
               <p className="text-xs font-medium uppercase tracking-wide text-ink-soft">Role</p>
@@ -80,7 +80,7 @@ export default function WorkDetail() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-content px-6 py-16 md:px-10 md:py-20">
+      <section className="mx-auto max-w-content px-6 py-14 md:px-10 md:py-20">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -94,7 +94,7 @@ export default function WorkDetail() {
           />
         </motion.div>
 
-        <div className="mt-12 grid gap-10 md:grid-cols-[1.4fr_1fr]">
+        <div className="mt-10 grid gap-8 md:mt-12 md:grid-cols-[1.4fr_1fr] md:gap-10">
           <div>
             <h2 className="text-2xl font-semibold tracking-tight text-ink">The objective</h2>
             <p className="mt-4 text-base leading-relaxed text-ink-soft">{project.description}</p>
@@ -149,7 +149,7 @@ export default function WorkDetail() {
 
       {otherProjects.length > 0 && (
         <section className="border-t border-line bg-cream-soft">
-          <div className="mx-auto max-w-content px-6 py-16 md:px-10 md:py-20">
+          <div className="mx-auto max-w-content px-6 py-14 md:px-10 md:py-20">
             <h2 className="text-2xl font-semibold tracking-tight text-ink md:text-3xl">
               More projects
             </h2>
@@ -159,7 +159,7 @@ export default function WorkDetail() {
               variants={container}
               initial="hidden"
               whileInView="show"
-              viewport={{ once: true, amount: 0.2 }}
+              viewport={{ once: true, amount: 0, margin: "0px 0px -10% 0px" }}
               className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3"
             >
               {otherProjects.map((p) => (

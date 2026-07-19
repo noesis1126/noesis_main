@@ -36,18 +36,18 @@ const item = {
 export default function EngagementModelsSection() {
   return (
     <section className="border-t border-line bg-cream-soft">
-      <div className="mx-auto max-w-content px-6 py-16 md:px-10 md:py-20">
+      <div className="mx-auto max-w-content px-6 py-14 md:px-10 md:py-20">
         <SectionHeading
           eyebrow="Engagement models"
           title="Flexible ways to work together"
-          description="Pick the model that fits how your team already operates — all three come with the same senior engineers."
+          description="Pick the model that fits how your team already operates - all three come with the same senior engineers."
         />
 
         <motion.div
           variants={container}
           initial="hidden"
           whileInView="show"
-          viewport={{ once: true, amount: 0.3 }}
+          viewport={{ once: true, amount: 0, margin: "0px 0px -10% 0px" }}
           className="mt-10 grid gap-5 sm:grid-cols-3"
         >
           {models.map(({ icon: Icon, title, description }) => (

@@ -3,7 +3,9 @@ import { Link, useParams, Navigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ArrowLeft, ArrowUpRight, Check } from "lucide-react";
 import { getServiceById, getOtherServices } from "../data/servicesData.js";
+import { getProjectsForService } from "../data/projectsData.js";
 import ConsultationCard from "../components/ConsultationCard.jsx";
+import ProjectCard from "../components/ProjectCard.jsx";
 
 const container = {
   hidden: {},
@@ -29,11 +31,12 @@ export default function ServiceDetail() {
 
   const Icon = service.icon;
   const otherServices = getOtherServices(service.id, 3);
+  const relatedProjects = getProjectsForService(service.id, 3);
 
   return (
     <>
       <section className="border-b border-line bg-cream-soft">
-        <div className="mx-auto max-w-content px-6 py-16 md:px-10 md:py-20">
+        <div className="mx-auto max-w-content px-6 py-12 md:px-10 md:py-20">
           <Link
             to="/services"
             className="inline-flex items-center gap-1.5 text-sm font-medium text-ink-soft transition-colors hover:text-accent"
@@ -46,16 +49,17 @@ export default function ServiceDetail() {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, ease: "easeOut" }}
-            className="mt-6 flex items-start gap-4"
+            className="mt-6 flex items-start gap-3 sm:gap-4"
           >
-            <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-accent-soft text-accent">
-              <Icon size={26} />
+            <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-accent-soft text-accent sm:h-14 sm:w-14">
+              <Icon size={22} className="sm:hidden" />
+              <Icon size={26} className="hidden sm:block" />
             </div>
             <div>
               <span className="text-xs font-semibold uppercase tracking-[0.18em] text-accent">
                 Service
               </span>
-              <h1 className="mt-2 text-3xl font-semibold tracking-tight text-ink md:text-5xl">
+              <h1 className="mt-2 text-[1.75rem] font-semibold leading-tight tracking-tight text-ink sm:text-3xl md:text-5xl">
                 {service.title}
               </h1>
             </div>
@@ -63,8 +67,8 @@ export default function ServiceDetail() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-content px-6 py-16 md:px-10 md:py-20">
-        <div className="grid gap-10 md:grid-cols-[1.4fr_1fr]">
+      <section className="mx-auto max-w-content px-6 py-14 md:px-10 md:py-20">
+        <div className="grid gap-8 md:grid-cols-[1.4fr_1fr] md:gap-10">
           <div>
             <div className="overflow-hidden rounded-3xl border border-line shadow-card">
               <img
@@ -78,7 +82,7 @@ export default function ServiceDetail() {
             <p className="mt-4 text-base leading-relaxed text-ink-soft">{service.description}</p>
             <p className="mt-4 text-base leading-relaxed text-ink-soft">
               In today's fast-paced digital landscape, having a robust, scalable solution isn't
-              optional — it's a requirement. Our {service.title.toLowerCase()} engagements are
+              optional - it's a requirement. Our {service.title.toLowerCase()} engagements are
               built on senior engineering, clear communication, and industry best practices from
               day one.
             </p>
@@ -120,9 +124,37 @@ export default function ServiceDetail() {
         </div>
       </section>
 
+      {relatedProjects.length > 0 && (
+        <section className="border-t border-line bg-cream-soft">
+          <div className="mx-auto max-w-content px-6 py-14 md:px-10 md:py-20">
+            <span className="text-xs font-semibold uppercase tracking-[0.14em] text-accent">
+              Related work
+            </span>
+            <h2 className="mt-2 text-2xl font-semibold tracking-tight text-ink md:text-3xl">
+              Projects that used {service.title}
+            </h2>
+            <p className="mt-2 text-base text-ink-soft">
+              A few case studies where we delivered this exact service.
+            </p>
+
+            <motion.div
+              variants={container}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true, amount: 0, margin: "0px 0px -10% 0px" }}
+              className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3"
+            >
+              {relatedProjects.map((project) => (
+                <ProjectCard key={project.id} project={project} variants={item} />
+              ))}
+            </motion.div>
+          </div>
+        </section>
+      )}
+
       {otherServices.length > 0 && (
         <section className="border-t border-line bg-cream-soft">
-          <div className="mx-auto max-w-content px-6 py-16 md:px-10 md:py-20">
+          <div className="mx-auto max-w-content px-6 py-14 md:px-10 md:py-20">
             <h2 className="text-2xl font-semibold tracking-tight text-ink md:text-3xl">
               Other services
             </h2>
@@ -132,7 +164,7 @@ export default function ServiceDetail() {
               variants={container}
               initial="hidden"
               whileInView="show"
-              viewport={{ once: true, amount: 0.2 }}
+              viewport={{ once: true, amount: 0, margin: "0px 0px -10% 0px" }}
               className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3"
             >
               {otherServices.map((s) => {

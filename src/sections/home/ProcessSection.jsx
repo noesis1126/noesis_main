@@ -36,7 +36,7 @@ const item = {
 
 export default function ProcessSection() {
   return (
-    <section className="mx-auto max-w-content px-6 py-16 md:px-10 md:py-24">
+    <section className="mx-auto max-w-content px-6 py-14 md:px-10 md:py-24">
       <SectionHeading
         eyebrow="How we work"
         title="A straightforward process"
@@ -47,15 +47,17 @@ export default function ProcessSection() {
         variants={container}
         initial="hidden"
         whileInView="show"
-        viewport={{ once: true, amount: 0.2 }}
-        className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4"
+        viewport={{ once: true, amount: 0, margin: "0px 0px -10% 0px" }}
+        className="mt-8 grid gap-6 sm:mt-10 sm:grid-cols-2 lg:grid-cols-4"
       >
         {steps.map((step) => (
-          <motion.div key={step.number} variants={item} className="relative pl-0">
-            <span className="font-display text-sm font-semibold text-accent">{step.number}</span>
-            <h3 className="mt-2 text-lg font-semibold text-ink">{step.title}</h3>
-            <p className="mt-2 text-sm leading-relaxed text-ink-soft">{step.description}</p>
-            <div className="mt-5 h-px w-full bg-line" />
+          <motion.div key={step.number} variants={item} className="relative flex gap-4 pl-0 sm:block sm:gap-0">
+            <span className="font-display text-2xl font-semibold text-accent opacity-30 sm:text-sm sm:opacity-100">{step.number}</span>
+            <div className="sm:mt-2">
+              <h3 className="text-lg font-semibold text-ink sm:mt-0">{step.title}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-ink-soft">{step.description}</p>
+            </div>
+            <div className="mt-5 hidden h-px w-full bg-line sm:block" />
           </motion.div>
         ))}
       </motion.div>

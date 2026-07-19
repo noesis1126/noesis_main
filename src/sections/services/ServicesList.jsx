@@ -24,7 +24,7 @@ export default function ServicesList() {
 
   // Selected service is kept in the URL (?service=web-development) so that
   // clicking into a project and pressing Back returns to this exact same
-  // filtered view — not a fresh, unfiltered page.
+  // filtered view - not a fresh, unfiltered page.
   const [searchParams, setSearchParams] = useSearchParams();
   const selectedId = searchParams.get("service");
   const selectedService = selectedId ? getServiceById(selectedId) : null;
@@ -72,7 +72,7 @@ export default function ServicesList() {
   }, [selectedId]);
 
   return (
-    <section className="mx-auto max-w-content px-6 pb-16 pt-16 md:px-10 md:pt-24">
+    <section className="mx-auto max-w-content px-6 pb-14 pt-20 md:px-10 md:pt-24">
       <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
         <SectionHeading
           eyebrow="Services"

@@ -8,7 +8,7 @@ export default function SectionHeading({ eyebrow, title, description, align = "l
     <motion.div
       initial={{ opacity: 0, y: 16 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.4 }}
+      viewport={{ once: true, amount: 0, margin: "0px 0px -10% 0px" }}
       transition={{ duration: 0.5, ease: "easeOut" }}
       className={`flex max-w-2xl flex-col gap-3 ${alignment}`}
     >
@@ -17,8 +17,8 @@ export default function SectionHeading({ eyebrow, title, description, align = "l
           {eyebrow}
         </span>
       )}
-      <h2 className="text-3xl font-semibold tracking-tight text-ink md:text-4xl">{title}</h2>
-      {description && <p className="text-base leading-relaxed text-ink-soft">{description}</p>}
+      <h2 className="text-[1.75rem] font-semibold leading-tight tracking-tight text-ink sm:text-3xl md:text-4xl">{title}</h2>
+      {description && <p className="text-[15px] leading-relaxed text-ink-soft sm:text-base">{description}</p>}
     </motion.div>
   );
 }

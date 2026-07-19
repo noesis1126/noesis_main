@@ -12,7 +12,7 @@ const SERVICE_OPTIONS = [
   "AI & Automation Solutions",
 ];
 
-const BUDGET_OPTIONS = ["Under $10k", "$10k – $25k", "$25k – $50k", "$50k – $100k", "$100k+"];
+const BUDGET_OPTIONS = ["Under ₹10k", "₹10k – ₹25k", "₹25k – ₹50k", "₹50k – ₹100k", "₹100k+"];
 
 const TIMELINE_OPTIONS = ["ASAP", "Within 1 month", "1–3 months", "3–6 months", "Flexible"];
 
@@ -21,7 +21,7 @@ const MESSAGE_LIMIT = 2000;
 const contactInfo = [
   { icon: Mail, label: "Email", value: EMAIL, href: `mailto:${EMAIL}` },
   { icon: Phone, label: "Phone", value: PHONE_DISPLAY, href: `tel:${PHONE_DISPLAY.replace(/\s+/g, "")}` },
-  { icon: MapPin, label: "Studio", value: "San Francisco, CA", href: null },
+  { icon: MapPin, label: "Studio", value: "Pune, Maharashtra", href: null },
 ];
 
 const inputClasses =
@@ -33,19 +33,19 @@ export default function ContactSection() {
 
   function handleSubmit(e) {
     e.preventDefault();
-    // No backend wired up yet — swap this for a real API/email call when ready.
+    // No backend wired up yet - swap this for a real API/email call when ready.
     setStatus("sent");
   }
 
   return (
-    <section id="contact" className="scroll-mt-24 mx-auto max-w-content px-6 py-16 md:px-10 md:py-24">
-      <div className="grid gap-10 rounded-3xl border border-line bg-white p-8 shadow-card md:grid-cols-[1fr_1.3fr] md:p-14">
+    <section id="contact" className="scroll-mt-24 mx-auto max-w-content px-6 py-14 md:px-10 md:py-24">
+      <div className="grid gap-8 rounded-3xl border border-line bg-white p-5 shadow-card sm:gap-10 sm:p-8 md:grid-cols-[1fr_1.3fr] md:p-14">
         {/* Left: intro + contact info */}
         <div>
           <span className="text-xs font-semibold uppercase tracking-[0.18em] text-accent">
             Free Consultation
           </span>
-          <h2 className="mt-3 text-3xl font-semibold tracking-tight text-ink md:text-4xl">
+          <h2 className="mt-3 text-2xl font-semibold tracking-tight text-ink sm:text-3xl md:text-4xl">
             Let's talk about your next project.
           </h2>
           <p className="mt-3 max-w-md text-base leading-relaxed text-ink-soft">

@@ -31,7 +31,7 @@ const item = {
 
 export default function SimilarProjectsSection() {
   return (
-    <section className="mx-auto max-w-content px-6 py-16 md:px-10 md:py-24">
+    <section className="mx-auto max-w-content px-6 py-14 md:px-10 md:py-24">
       <div className="flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
         <SectionHeading
           eyebrow="What we do"
@@ -51,7 +51,7 @@ export default function SimilarProjectsSection() {
         variants={container}
         initial="hidden"
         whileInView="show"
-        viewport={{ once: true, amount: 0.3 }}
+        viewport={{ once: true, amount: 0, margin: "0px 0px -10% 0px" }}
         className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3"
       >
         {featured.map((project) => {

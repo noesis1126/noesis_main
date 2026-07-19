@@ -12,11 +12,11 @@ export const EMAIL = "noesis1126@gmail.com";
 
 // Display format shown on the page (with country code, spaced for readability)
 export const PHONE_DISPLAY = "+91 70572 05190";
-// Digits only, country code first, no "+" or spaces — used for the WhatsApp
+// Digits only, country code first, no "+" or spaces - used for the WhatsApp
 // link (https://wa.me/...). Assumes India (91); update if that's wrong.
 export const PHONE_NUMBER = "917057205190";
 
-// Logo files — served from /public/logo, so these paths work as-is with no import needed.
+// Logo files - served from /public/logo, so these paths work as-is with no import needed.
 export const LOGO_FULL = "/logo/noesis-logo.png"; // icon + wordmark, used in navbar / footer
 export const LOGO_ICON = "/logo/noesis-icon.png"; // icon only, used in tight spaces
 
