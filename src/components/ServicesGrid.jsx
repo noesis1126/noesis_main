@@ -41,8 +41,8 @@ export default function ServicesGrid({
       variants={container}
       initial="hidden"
       whileInView="show"
-      viewport={{ once: true, amount: 0.15 }}
-      className={`grid gap-6 ${gridCols}`}
+      viewport={{ once: true, amount: 0, margin: "0px 0px -10% 0px" }}
+      className={`grid gap-5 sm:gap-6 ${gridCols}`}
     >
       {services.map(({ id, icon: Icon, title, description, features, image, integrations }) => {
         const isSelected = interactive && selectedId === id;
@@ -58,7 +58,7 @@ export default function ServicesGrid({
               />
             </div>
 
-            <div className="flex flex-1 flex-col p-6">
+            <div className="flex flex-1 flex-col p-5 sm:p-6">
               <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-accent-soft text-accent">
                 <Icon size={18} />
               </div>

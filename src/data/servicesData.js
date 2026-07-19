@@ -4,7 +4,7 @@ import { WhatsAppIcon } from "../components/icons.jsx";
 // ---------------------------------------------------------------------------
 // Single source of truth for the services grid. Both the Home page preview
 // and the full Services page render from this same list via
-// src/components/ServicesGrid.jsx — edit it once here and both pages update.
+// src/components/ServicesGrid.jsx - edit it once here and both pages update.
 // ---------------------------------------------------------------------------
 
 export const SERVICES = [

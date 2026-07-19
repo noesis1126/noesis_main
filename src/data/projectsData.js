@@ -16,7 +16,7 @@ export const PROJECTS = [
     category: "Website · Institutional",
     subtitle: "Institutional Web Platform",
     description:
-      "Official web presence for a government institution — a modern, accessible, high-performance platform serving thousands of students and faculty daily.",
+      "Official web presence for a government institution - a modern, accessible, high-performance platform serving thousands of students and faculty daily.",
     tags: ["React.js", "Node.js", "Tailwind CSS", "Full Stack"],
     image: "/projects/gcon-nanded.png",
     liveUrl: "https://gconnanded.in",
@@ -29,7 +29,7 @@ export const PROJECTS = [
     category: "SaaS · Hospitality",
     subtitle: "Smart Tiffin Service Ecosystem",
     description:
-      "A complete digital ecosystem — consumer portal, admin dashboard, QR-based attendance, subscription management, multi-language support, analytics, and a Firebase-powered real-time backend.",
+      "A complete digital ecosystem - consumer portal, admin dashboard, QR-based attendance, subscription management, multi-language support, analytics, and a Firebase-powered real-time backend.",
     tags: ["React.js", "Firebase", "i18next", "QR Tech", "GA4"],
     image: "/projects/mane-mess.png",
     liveUrl: "https://manemess.in",
@@ -42,7 +42,7 @@ export const PROJECTS = [
     category: "E-commerce",
     subtitle: "E-Commerce Platform",
     description:
-      "A modern e-commerce frontend designed for maximum engagement and conversion — performance-optimized with smooth transitions and responsive layouts.",
+      "A modern e-commerce frontend designed for maximum engagement and conversion - performance-optimized with smooth transitions and responsive layouts.",
     tags: ["React.js", "Tailwind CSS", "REST API", "React Router"],
     image: "/projects/herbs-magic.png",
     liveUrl: "https://www.theherbsmagic.com/",
@@ -55,7 +55,7 @@ export const PROJECTS = [
     category: "SaaS · AI",
     subtitle: "AI-Powered Tender Management",
     description:
-      "An intelligent tender management system with AI-driven document processing, keyword extraction, and automated candidate matching — deployed on serverless architecture.",
+      "An intelligent tender management system with AI-driven document processing, keyword extraction, and automated candidate matching - deployed on serverless architecture.",
     tags: ["React.js", "FastAPI", "OpenAI API", "AWS Lambda"],
     image: "/projects/maha-gps.png",
     liveUrl: "https://www.mahagps.com/",
@@ -78,7 +78,7 @@ export const PROJECTS = [
     role: "Mobile Development",
   },
 
-    {
+  {
     id: "zoomtod",
     title: "ZoomTod",
     category: "Mobile App · Communication",
@@ -87,7 +87,7 @@ export const PROJECTS = [
       "A cross-platform audio communication app enabling structured admin-to-participant voice sessions, optimized for low-bandwidth environments.",
     highlights: [
       "Implemented a permission-based speaking system for admins to selectively grant microphone access, ensuring controlled, structured audio sessions.",
-      "Full production lifecycle: Flutter mobile client + React.js web admin dashboard + Node.js/WebSocket backend — deployed live to the Google Play Store with active users.",
+      "Full production lifecycle: Flutter mobile client + React.js web admin dashboard + Node.js/WebSocket backend - deployed live to the Google Play Store with active users.",
     ],
     tags: ["Flutter", "React.js", "Node.js", "WebRTC", "WebSocket"],
     image:
@@ -114,6 +114,75 @@ export const PROJECTS = [
     year: "2025",
     role: "Full Stack Development",
   },
+  {
+    id: "tarushpranaa",
+    title: "Tarushpranaa",
+    category: "Website · E-commerce",
+    subtitle: "Tarot E-commerce & Consultation Platform",
+    description:
+      "A tarot-focused e-commerce platform combining product sales, guided courses, and expert consultation booking in one seamless experience.",
+    highlights: [
+      "Built a unified storefront for tarot decks and spiritual products alongside a structured course catalog for self-paced learning.",
+      "Implemented an expert consultation booking flow, letting customers schedule and pay for one-on-one sessions with tarot practitioners.",
+    ],
+    tags: ["React.js", "E-commerce", "Courses", "Consultation Booking"],
+    image: "/projects/proj_tarushpranaa.png",
+    liveUrl: "https://tarushpranaa.com/",
+    year: "2026",
+    role: "Full Stack Development",
+  },
+  {
+    id: "babaji-ki-buti",
+    title: "Babaji Ki Buti",
+    category: "Website · E-commerce",
+    subtitle: "Ayurvedic Health & Wellness Store",
+    description:
+      "An e-commerce storefront for authentic Ayurvedic products, built to help customers discover remedies by health need - from immunity and energy to hair, skin, and digestive care.",
+    highlights: [
+      "Built a category-driven shopping experience letting customers browse products by wellness need such as immunity, energy & stamina, pain relief, hair & skin care, and digestive health.",
+      "Implemented cart, wishlist, and account management alongside a promotional banner system for offers like free shipping and new product launches.",
+    ],
+    tags: ["React.js", "E-commerce", "Tailwind CSS", "Cart & Checkout"],
+    image: "/projects/proj_bbjkb.png",
+    liveUrl: "https://babajikibuti.com/home",
+    year: "2026",
+    role: "Full Stack Development",
+  },
+  {
+    id: "agrovedant",
+    title: "AgroVedant",
+    category: "SaaS · Multi-Vendor E-commerce",
+    subtitle: "Multi-Vendor Agriculture Marketplace",
+    description:
+      "A multi-vendor e-commerce marketplace connecting farmers and buyers to trade farming equipment, seeds, and crop-protection products, with real-time mandi price tracking and digital khata book records.",
+    highlights: [
+      "Built a multi-vendor storefront where farmers and vendors can list and sell their own products, with role-based access control (RBAC) governing admin, vendor, and buyer permissions.",
+      "Implemented live mandi price tracking and a digital khata book for maintaining vendor/farmer transaction ledgers directly within the platform.",
+      "Delivered order management, settlements, commissions, invoicing, and dashboards across vendor and admin roles on a full Spring Boot backend.",
+    ],
+    tags: ["React.js", "Spring Boot", "PostgreSQL", "Multi-Vendor", "RBAC"],
+    image: "/projects/proj_agro.png",
+    liveUrl: "https://gitest2.shop/",
+    year: "2026",
+    role: "Full Stack Development",
+  },
+  {
+    id: "mahipatsinh-foundation",
+    title: "Mahipatsinh Foundation",
+    category: "Website · NGO",
+    subtitle: "NGO Donation & Outreach Platform",
+    description:
+      "A donation-driven web platform for an NGO dedicated to child welfare, enabling one-time and recurring contributions, in-kind product donations, and campaign-led community outreach.",
+    highlights: [
+      "Built a secure donation flow supporting one-time and recurring payments, alongside a separate channel for donors to contribute physical products directly to the cause.",
+      "Implemented campaign and community sections to showcase ongoing initiatives, CSR partnerships, and a media gallery highlighting the foundation's on-ground impact.",
+    ],
+    tags: ["React.js", "Payment Gateway", "Recurring Donations", "CMS"],
+    image: "/projects/proj_ngo.png",
+    liveUrl: "https://mahipatsinhfoundation.org/",
+    year: "2026",
+    role: "Full Stack Development",
+  },
 ];
 
 export function getProjectById(id) {
@@ -128,14 +197,14 @@ export function getOtherProjects(id, count = 3) {
 // Maps each service (see servicesData.js) to the project ids that best show
 // off that service. Used to power the "click a service, see related work"
 // filter on the Services page. Edit the arrays below to feature different
-// case studies per service — first `count` ids are shown.
+// case studies per service - first `count` ids are shown.
 // ---------------------------------------------------------------------------
 const SERVICE_PROJECT_MAP = {
-  "web-development": ["gcon-nanded", "it-is-my-town", "herbs-magic"],
+  "web-development": ["gcon-nanded", "it-is-my-town", "mahipatsinh-foundation"],
   "mobile-app-development": ["zoomtod", "bunny", "it-is-my-town"],
-  "ui-ux-design": ["herbs-magic", "it-is-my-town", "mane-mess"],
-  "ecommerce-development": ["herbs-magic", "it-is-my-town", "maha-gps"],
-  "custom-software-development": ["mane-mess", "maha-gps", "gcon-nanded"],
+  "ui-ux-design": ["herbs-magic", "babaji-ki-buti", "tarushpranaa"],
+  "ecommerce-development": ["herbs-magic", "agrovedant", "babaji-ki-buti", "tarushpranaa", "it-is-my-town"],
+  "custom-software-development": ["agrovedant", "mane-mess", "maha-gps"],
   "ai-automation-solutions": ["maha-gps", "zoomtod", "mane-mess"],
 };
 

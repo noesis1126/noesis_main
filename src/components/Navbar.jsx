@@ -21,7 +21,7 @@ export default function Navbar() {
 
   // On the home page, watch the actual hero section (#home-hero) and switch
   // the bar from a transparent overlay to a solid one the moment it's fully
-  // scrolled out of view — works no matter how tall the hero ends up being.
+  // scrolled out of view - works no matter how tall the hero ends up being.
   useEffect(() => {
     if (!isHome) {
       setPastHero(false);
@@ -40,65 +40,69 @@ export default function Navbar() {
   const transparent = isHome && !pastHero;
 
   return (
-    <header
-      className={`top-0 z-50 w-full transition-colors duration-300 ${
-        isHome ? "fixed" : "sticky"
-      } ${
-        transparent
-          ? "border-b border-transparent bg-transparent"
-          : "border-b border-line bg-cream/90 backdrop-blur-sm"
-      }`}
-    >
-      <div className="mx-auto flex max-w-content items-center justify-between px-6 py-4 md:px-10">
-        <NavLink to="/" className="flex items-center gap-2">
-          <img src={LOGO_FULL} alt={`${COMPANY_NAME} logo`} className="h-11 w-auto md:h-14" />
-        </NavLink>
-
-        {/* Desktop nav */}
-        <nav className="hidden items-center gap-8 md:flex">
-          {NAV_LINKS.map((link) => (
-            <NavLink
-              key={link.path}
-              to={link.path}
-              className={({ isActive }) =>
-                `relative text-sm font-medium transition-colors ${
-                  isActive ? "text-ink" : "text-ink-soft hover:text-ink"
-                }`
-              }
-            >
-              {({ isActive }) => (
-                <span className="relative pb-1">
-                  {link.label}
-                  {isActive && (
-                    <motion.span
-                      layoutId="nav-underline"
-                      className="absolute -bottom-1 left-0 right-0 h-[2px] bg-accent"
-                    />
-                  )}
-                </span>
-              )}
-            </NavLink>
-          ))}
-          <NavLink
-            to="/contact"
-            className="inline-flex items-center gap-1 rounded-full bg-accent px-4 py-2 text-sm font-medium text-cream transition-transform hover:scale-[1.03] active:scale-[0.98]"
-          >
-            Get in touch
-            <ArrowUpRight size={15} />
+    <>
+      <header
+        className={`top-0 z-50 w-full transition-colors duration-300 ${isHome ? "fixed" : "sticky"
+          } ${transparent
+            ? "border-b border-transparent bg-transparent"
+            : "border-b border-line bg-cream/90 backdrop-blur-sm"
+          }`}
+      >
+        <div className="mx-auto flex max-w-content items-center justify-between px-6 py-4 md:px-10">
+          <NavLink to="/" className="flex items-center gap-2">
+            <img src={LOGO_FULL} alt={`${COMPANY_NAME} logo`} className="h-11 w-auto md:h-14" />
           </NavLink>
-        </nav>
 
-        {/* Mobile toggle */}
-        <button
-          onClick={() => setOpen(true)}
-          className="flex h-10 w-10 items-center justify-center rounded-full text-ink transition-colors hover:bg-cream-soft md:hidden"
-          aria-label="Open navigation menu"
-        >
-          <Menu size={22} />
-        </button>
-      </div>
+          {/* Desktop nav */}
+          <nav className="hidden items-center gap-8 md:flex">
+            {NAV_LINKS.map((link) => (
+              <NavLink
+                key={link.path}
+                to={link.path}
+                className={({ isActive }) =>
+                  `relative text-sm font-medium transition-colors ${isActive ? "text-ink" : "text-ink-soft hover:text-ink"
+                  }`
+                }
+              >
+                {({ isActive }) => (
+                  <span className="relative pb-1">
+                    {link.label}
+                    {isActive && (
+                      <motion.span
+                        layoutId="nav-underline"
+                        className="absolute -bottom-1 left-0 right-0 h-[2px] bg-accent"
+                      />
+                    )}
+                  </span>
+                )}
+              </NavLink>
+            ))}
+            <NavLink
+              to="/contact"
+              className="inline-flex items-center gap-1 rounded-full bg-accent px-4 py-2 text-sm font-medium text-cream transition-transform hover:scale-[1.03] active:scale-[0.98]"
+            >
+              Get in touch
+              <ArrowUpRight size={15} />
+            </NavLink>
+          </nav>
 
-      {/* Mobile drawer */}
+          {/* Mobile toggle */}
+          <button
+            onClick={() => setOpen(true)}
+            className="flex h-10 w-10 items-center justify-center rounded-full text-ink transition-colors hover:bg-cream-soft md:hidden"
+            aria-label="Open navigation menu"
+          >
+            <Menu size={22} />
+          </button>
+        </div>
+      </header>
+
+      {/* Mobile drawer - rendered as a sibling of <header>, not a descendant.
+          The header applies backdrop-blur (a CSS filter) when solid, and a
+          filter on an ancestor turns it into the containing block for any
+          position:fixed descendant - which was pinning this drawer to the
+          header's own box instead of the viewport. Keeping it outside the
+          header sidesteps that entirely. */}
       <AnimatePresence>
         {open && (
           <>
@@ -141,10 +145,9 @@ export default function Navbar() {
                       to={link.path}
                       onClick={() => setOpen(false)}
                       className={({ isActive }) =>
-                        `flex items-center gap-3 rounded-xl px-4 py-3 text-sm font-medium transition-colors ${
-                          isActive
-                            ? "bg-accent-soft text-accent"
-                            : "text-ink-soft hover:bg-cream-soft hover:text-ink"
+                        `flex items-center gap-3 rounded-xl px-4 py-3 text-sm font-medium transition-colors ${isActive
+                          ? "bg-accent-soft text-accent"
+                          : "text-ink-soft hover:bg-cream-soft hover:text-ink"
                         }`
                       }
                     >
@@ -190,6 +193,6 @@ export default function Navbar() {
           </>
         )}
       </AnimatePresence>
-    </header>
+    </>
   );
 }

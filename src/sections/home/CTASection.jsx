@@ -4,13 +4,13 @@ import { ArrowUpRight } from "lucide-react";
 
 export default function CTASection() {
   return (
-    <section className="mx-auto max-w-content px-6 pb-20 md:px-10 md:pb-28">
+    <section className="mx-auto max-w-content px-6 pb-16 md:px-10 md:pb-28">
       <motion.div
         initial={{ opacity: 0, y: 24 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.4 }}
+        viewport={{ once: true, amount: 0, margin: "0px 0px -10% 0px" }}
         transition={{ duration: 0.55, ease: "easeOut" }}
-        className="relative flex flex-col items-start justify-between gap-8 overflow-hidden rounded-3xl px-8 py-12 md:flex-row md:items-center md:px-14 md:py-16"
+        className="relative flex flex-col items-start justify-between gap-6 overflow-hidden rounded-3xl px-6 py-10 sm:gap-8 sm:px-8 sm:py-12 md:flex-row md:items-center md:px-14 md:py-16"
       >
         {/* REPLACE ME: full-cover background image for the CTA card */}
         <img
@@ -24,7 +24,7 @@ export default function CTASection() {
         <div className="absolute inset-0 bg-gradient-to-br from-ink/95 via-ink/90 to-ink/75" />
 
         <div className="relative">
-          <h2 className="text-2xl font-semibold tracking-tight text-cream md:text-3xl">
+          <h2 className="text-[1.75rem] font-semibold leading-tight tracking-tight text-cream sm:text-2xl md:text-3xl">
             Have a product in mind?
           </h2>
           <p className="mt-3 max-w-md text-sm leading-relaxed text-cream/70">
@@ -33,7 +33,7 @@ export default function CTASection() {
         </div>
         <NavLink
           to="/contact"
-          className="relative inline-flex shrink-0 items-center gap-2 rounded-full bg-accent px-6 py-3 text-sm font-medium text-cream transition-transform hover:scale-[1.03] active:scale-[0.98]"
+          className="relative inline-flex w-full shrink-0 items-center justify-center gap-2 rounded-full bg-accent px-6 py-3.5 text-sm font-medium text-cream transition-transform hover:scale-[1.03] active:scale-[0.98] sm:w-auto sm:py-3"
         >
           Talk to us
           <ArrowUpRight size={16} />

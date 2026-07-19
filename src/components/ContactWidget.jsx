@@ -48,7 +48,7 @@ export default function ContactWidget() {
               Book a free consultation
             </h3>
             <p className="mt-2 text-sm leading-relaxed text-ink-soft">
-              Tell us about your product or website — we'll follow up with a scoped plan, no
+              Tell us about your product or website - we'll follow up with a scoped plan, no
               obligation.
             </p>
 
@@ -56,13 +56,13 @@ export default function ContactWidget() {
               <ChatBubbleAnimation />
             </div>
 
-            <div className="mt-5 flex flex-col gap-3">
+            <div className="mt-5 flex flex-row gap-2 sm:gap-3">
               <Link
                 to="/contact"
                 onClick={() => setOpen(false)}
-                className="inline-flex items-center justify-center gap-2 rounded-full bg-accent px-5 py-3 text-sm font-medium text-cream shadow-soft transition-transform hover:scale-[1.02] active:scale-[0.98]"
+                className="inline-flex flex-1 basis-0 items-center justify-center gap-1.5 rounded-full bg-accent px-2 py-3 text-center text-xs font-medium leading-tight text-cream shadow-soft transition-transform hover:scale-[1.02] active:scale-[0.98] sm:gap-2 sm:px-5 sm:text-sm"
               >
-                <PhoneCall size={16} />
+                <PhoneCall size={15} className="shrink-0" />
                 Free Consultation
               </Link>
 
@@ -70,9 +70,9 @@ export default function ContactWidget() {
                 href={`https://wa.me/${PHONE_NUMBER}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 rounded-full border border-line px-5 py-3 text-sm font-medium text-ink transition-colors hover:border-accent hover:text-accent"
+                className="inline-flex flex-1 basis-0 items-center justify-center gap-1.5 rounded-full border border-line px-2 py-3 text-center text-xs font-medium leading-tight text-ink transition-colors hover:border-accent hover:text-accent sm:gap-2 sm:px-5 sm:text-sm"
               >
-                <WhatsAppIcon size={17} />
+                <WhatsAppIcon size={15} className="shrink-0" />
                 Chat on WhatsApp
               </a>
             </div>
@@ -80,7 +80,7 @@ export default function ContactWidget() {
         )}
       </AnimatePresence>
 
-      {/* Floating action button — solid flat circle, no pulse/glow effects
+      {/* Floating action button - solid flat circle, no pulse/glow effects
           (a scaling translucent ring here previously combined with the
           button's own shadow to read as an uneven, patchy highlight rather
           than a clean ring, so it's been dropped in favor of a small static

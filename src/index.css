@@ -4,6 +4,7 @@
 
 html {
   scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
@@ -12,6 +13,13 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
   @apply font-display;
+}
+
+/* Comfortable default tap targets on touch devices */
+@media (max-width: 767px) {
+  a, button {
+    -webkit-tap-highlight-color: transparent;
+  }
 }
 
 /* Respect reduced motion preference */

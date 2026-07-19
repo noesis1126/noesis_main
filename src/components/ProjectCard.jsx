@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ArrowUpRight } from "lucide-react";
 
-// Reusable project card — used on Home (SimilarProjectsSection), About
+// Reusable project card - used on Home (SimilarProjectsSection), About
 // (ProjectsSection), and Work (WorkSection). Clicking the card or the arrow
 // navigates to the full case study at /work/:id.
 export default function ProjectCard({ project, variants }) {
@@ -20,7 +20,7 @@ export default function ProjectCard({ project, variants }) {
             className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
           />
         </div>
-        <div className="flex flex-1 flex-col p-6">
+        <div className="flex flex-1 flex-col p-5 sm:p-6">
           <span className="text-xs font-medium uppercase tracking-wide text-accent">
             {project.category}
           </span>

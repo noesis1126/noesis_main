@@ -18,37 +18,37 @@ export default function HeroSection() {
         <div className="absolute inset-0 bg-cream/80" />
       </div>
 
-      <div className="relative mx-auto max-w-content px-6 pb-20 pt-28 md:px-10 md:pb-28 md:pt-36">
-      <div className="grid items-center gap-14 md:grid-cols-2 md:gap-10">
+      <div className="relative mx-auto max-w-content px-5 pb-14 pt-24 sm:px-6 md:px-10 md:pb-28 md:pt-36">
+      <div className="grid items-center gap-10 md:grid-cols-2 md:gap-10">
         {/* Left: text */}
         <motion.div
           initial={{ opacity: 0, x: -24 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
-          className="flex flex-col items-start gap-6"
+          className="flex flex-col items-start gap-5 md:gap-6"
         >
-          <span className="inline-flex items-center gap-2 rounded-full border border-line bg-cream-soft px-3 py-1 text-xs font-medium text-ink-soft">
+          <span className="inline-flex items-center gap-2 rounded-full border border-line bg-cream-soft px-3 py-1 text-xs font-medium text-ink-soft shadow-card md:shadow-none">
             <Sparkles size={13} className="text-accent" />
             Product studio for founders &amp; teams
           </span>
 
-          <h1 className="text-4xl font-semibold leading-[1.1] tracking-tight text-ink md:text-5xl lg:text-6xl">
+          <h1 className="text-[2.5rem] font-semibold leading-[1.08] tracking-tight text-ink sm:text-5xl md:text-5xl lg:text-6xl">
             {COMPANY_NAME}
           </h1>
 
-          <p className="max-w-md text-lg leading-relaxed text-ink-soft">{TAGLINE}</p>
+          <p className="max-w-md text-base leading-relaxed text-ink-soft sm:text-lg">{TAGLINE}</p>
 
-          <div className="flex flex-wrap items-center gap-4 pt-2">
+          <div className="flex w-full flex-wrap items-center gap-3 pt-2 sm:w-auto sm:gap-4">
             <NavLink
               to="/services"
-              className="inline-flex items-center gap-2 rounded-full bg-accent px-6 py-3 text-sm font-medium text-cream shadow-soft transition-transform hover:scale-[1.03] active:scale-[0.98]"
+              className="inline-flex flex-1 items-center justify-center gap-2 rounded-full bg-accent px-6 py-3.5 text-sm font-medium text-cream shadow-soft transition-transform hover:scale-[1.03] active:scale-[0.98] sm:flex-none sm:py-3"
             >
               Start a project
               <ArrowUpRight size={16} />
             </NavLink>
             <NavLink
               to="/work"
-              className="inline-flex items-center gap-2 rounded-full border border-ink/20 bg-white px-6 py-3 text-sm font-medium text-ink shadow-soft transition-colors hover:border-accent hover:text-accent"
+              className="inline-flex flex-1 items-center justify-center gap-2 rounded-full border border-ink/20 bg-white px-6 py-3.5 text-sm font-medium text-ink shadow-soft transition-colors hover:border-accent hover:text-accent sm:flex-none sm:py-3"
             >
               See our work
             </NavLink>
@@ -87,10 +87,10 @@ export default function HeroSection() {
             <motion.div
               animate={{ y: [0, 8, 0] }}
               transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut", delay: 0.4 }}
-              className="absolute -left-6 top-8 hidden rounded-xl border border-line bg-white px-4 py-3 shadow-card md:block"
+              className="absolute -left-2 top-4 rounded-xl border border-line bg-white px-3 py-2 shadow-card sm:-left-4 sm:top-6 sm:px-4 sm:py-3 md:-left-6 md:top-8"
             >
-              <p className="text-xs font-medium text-ink-soft">Shipped this week</p>
-              <p className="font-display text-lg font-semibold text-accent">12 releases</p>
+              <p className="text-[10px] font-medium text-ink-soft sm:text-xs">Shipped this week</p>
+              <p className="font-display text-base font-semibold text-accent sm:text-lg">12 releases</p>
             </motion.div>
           </motion.div>
         </motion.div>

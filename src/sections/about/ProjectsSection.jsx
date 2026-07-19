@@ -15,7 +15,7 @@ const item = {
 
 export default function ProjectsSection() {
   return (
-    <section className="mx-auto max-w-content px-6 py-16 md:px-10 md:py-20">
+    <section className="mx-auto max-w-content px-6 py-14 md:px-10 md:py-20">
       <SectionHeading
         eyebrow="Selected work"
         title="Our projects"
@@ -26,7 +26,7 @@ export default function ProjectsSection() {
         variants={container}
         initial="hidden"
         whileInView="show"
-        viewport={{ once: true, amount: 0.2 }}
+        viewport={{ once: true, amount: 0, margin: "0px 0px -10% 0px" }}
         className="mt-10 grid gap-6 sm:grid-cols-2"
       >
         {PROJECTS.map((project) => (
