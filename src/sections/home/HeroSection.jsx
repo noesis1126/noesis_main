@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowUpRight, Sparkles, CheckCircle2 } from "lucide-react";
+import { ArrowUpRight, CheckCircle2 } from "lucide-react";
 import { NavLink } from "react-router-dom";
 import { COMPANY_NAME, TAGLINE } from "../../data/siteData.js";
 
@@ -8,24 +8,29 @@ const trustPoints = ["Senior team only", "Fixed-scope estimates", "Ship in weeks
 export default function HeroSection() {
   return (
     <section id="home-hero" className="relative flex min-h-screen items-center overflow-hidden bg-cream">
-      {/* Full-bleed background photo, softly blurred and cream-tinted so it
-          reads as texture behind the copy rather than a full-strength photo. */}
-      <div className="pointer-events-none absolute inset-0 h-full w-full" aria-hidden="true">
+      {/* Full-bleed banner image as the section background, sitting behind all text */}
+      <motion.div
+        className="pointer-events-none absolute inset-0 h-full w-full"
+        aria-hidden="true"
+        animate={{ y: [0, -10, 0] }}
+        transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+      >
         <img
-          src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=2000&q=70"
+          src="/main_banner_img.png"
           alt=""
-          className="h-full w-full scale-110 object-cover blur-sm"
+          className="h-full w-full object-cover"
         />
-        <div className="absolute inset-0 bg-cream/80" />
-      </div>
+        {/* Scrim only on the left where the text sits; fades to fully transparent before the illustration */}
+        <div className="absolute inset-0 bg-gradient-to-r from-cream via-cream/70 to-transparent md:w-3/5" />
+      </motion.div>
 
-      {/* Soft radial accent glow on top of the photo for extra depth */}
+      {/* Soft radial accent glow on top of the image for extra depth */}
       <div
         className="pointer-events-none absolute left-1/2 top-0 h-[36rem] w-[60rem] -translate-x-1/2 rounded-full bg-accent/10 blur-3xl"
         aria-hidden="true"
       />
 
-      <div className="relative mx-auto flex w-full max-w-content flex-col items-center gap-12 px-5 py-16 sm:px-6 md:flex-row md:items-center md:gap-10 md:px-10 md:py-20">
+      <div className="relative mx-auto flex w-full max-w-content flex-col items-center gap-12 px-5 py-16 sm:px-6 md:items-start md:px-10 md:py-20">
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
@@ -65,32 +70,7 @@ export default function HeroSection() {
             ))}
           </ul>
         </motion.div>
-
-        {/* Product mockup, side-by-side with the copy on desktop */}
-        <motion.div
-          initial={{ opacity: 0, y: 24, scale: 0.98 }}
-          animate={{ opacity: 1, y: 0, scale: 1 }}
-          transition={{ duration: 0.6, ease: "easeOut", delay: 0.15 }}
-          className="relative mx-auto w-full md:w-3/5"
-        >
-          <motion.div
-            animate={{ y: [0, -10, 0] }}
-            transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-            className="relative"
-          >
-            {/* Browser chrome frame */}
-            <div className="overflow-hidden rounded-2xl border border-line bg-white shadow-soft sm:rounded-3xl">
-             
-              <img
-                src="https://res.cloudinary.com/afytkgjc/image/upload/v1784528460/heroimg_qf5nec.png"
-                alt="Dashboard preview of a product built by the studio"
-                className="w-full object-contain"
-              />
-            </div>
-          </motion.div>
-        </motion.div>
       </div>
     </section>
   );
 }
-  
