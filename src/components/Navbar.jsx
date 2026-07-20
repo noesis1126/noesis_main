@@ -19,9 +19,9 @@ export default function Navbar() {
     };
   }, [open]);
 
-  // On the home page, watch the actual hero section (#home-hero) and switch
-  // the bar from a transparent overlay to a solid one the moment it's fully
-  // scrolled out of view - works no matter how tall the hero ends up being.
+  // On the home page, watch the actual hero section (#home-hero) and reveal
+  // the bar the moment it's fully scrolled out of view - works no matter how
+  // tall the hero ends up being.
   useEffect(() => {
     if (!isHome) {
       setPastHero(false);
@@ -37,15 +37,17 @@ export default function Navbar() {
     return () => observer.disconnect();
   }, [isHome]);
 
-  const transparent = isHome && !pastHero;
+  // On the home hero, the entire bar stays off-screen until the user
+  // scrolls past the hero; every other page keeps it visible as usual.
+  const hiddenOnHero = isHome && !pastHero;
 
   return (
     <>
-      <header
-        className={`top-0 z-50 w-full transition-colors duration-300 ${isHome ? "fixed" : "sticky"
-          } ${transparent
-            ? "border-b border-transparent bg-transparent"
-            : "border-b border-line bg-cream/90 backdrop-blur-sm"
+      <motion.header
+        initial={false}
+        animate={{ y: hiddenOnHero ? "-100%" : "0%" }}
+        transition={{ duration: 0.3, ease: "easeOut" }}
+        className={`top-0 z-50 w-full border-b border-line bg-cream/90 backdrop-blur-sm transition-colors duration-300 ${isHome ? "fixed" : "sticky"
           }`}
       >
         <div className="mx-auto flex max-w-content items-center justify-between px-6 py-4 md:px-10">
@@ -95,7 +97,7 @@ export default function Navbar() {
             <Menu size={22} />
           </button>
         </div>
-      </header>
+      </motion.header>
 
       {/* Mobile drawer - rendered as a sibling of <header>, not a descendant.
           The header applies backdrop-blur (a CSS filter) when solid, and a

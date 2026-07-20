@@ -15,7 +15,7 @@ export const SERVICES = [
     description: "Fast, scalable, SEO-ready marketing sites and web apps with modern stacks.",
     features: ["React / Next.js apps", "REST & GraphQL APIs", "CMS integration", "SEO & Core Web Vitals"],
     // REPLACE ME: service thumbnail image
-    image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=700&q=80",
+    image: "https://res.cloudinary.com/afytkgjc/image/upload/v1784475754/service1_az4vrb.png",
   },
   {
     id: "mobile-app-development",
@@ -29,7 +29,7 @@ export const SERVICES = [
       { icon: Bot, label: "Chatbot" },
     ],
     // REPLACE ME: service thumbnail image
-    image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=700&q=80",
+    image: "https://res.cloudinary.com/afytkgjc/image/upload/v1784475753/service2_td80hf.png",
   },
   {
     id: "ui-ux-design",
@@ -38,7 +38,7 @@ export const SERVICES = [
     description: "Beautiful, intuitive product experiences crafted by senior designers.",
     features: ["UX research & wireframes", "Design systems", "Interactive prototypes", "Accessibility (WCAG 2.1)"],
     // REPLACE ME: service thumbnail image
-    image: "https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&w=700&q=80",
+    image: "https://res.cloudinary.com/afytkgjc/image/upload/v1784475754/service3_nqxqvb.png",
   },
   {
     id: "ecommerce-development",
@@ -47,7 +47,7 @@ export const SERVICES = [
     description: "Shopify, headless and custom commerce that converts visitors into buyers.",
     features: ["Custom storefronts", "Payment gateway integration", "Inventory & order management", "Conversion optimisation"],
     // REPLACE ME: service thumbnail image
-    image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=700&q=80",
+    image: "https://res.cloudinary.com/afytkgjc/image/upload/v1784475753/service4_tqcl1y.png",
   },
   {
     id: "custom-software-development",
@@ -56,7 +56,7 @@ export const SERVICES = [
     description: "Internal tools, dashboards and SaaS platforms built for scale and security.",
     features: ["Enterprise SaaS platforms", "Internal tools & dashboards", "API & third-party integrations", "Legacy system modernisation"],
     // REPLACE ME: service thumbnail image
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=700&q=80",
+    image: "https://res.cloudinary.com/afytkgjc/image/upload/v1784475753/service5_bzake0.png",
   },
   {
     id: "ai-automation-solutions",
@@ -65,7 +65,7 @@ export const SERVICES = [
     description: "LLM-powered features, workflow automation and intelligent integrations.",
     features: ["LLM integration & fine-tuning", "RAG pipelines", "Intelligent agents & chatbots", "Business workflow automation"],
     // REPLACE ME: service thumbnail image
-    image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=700&q=80",
+    image: "https://res.cloudinary.com/afytkgjc/image/upload/v1784475753/service6_lv4sle.png",
   },
 ];
 

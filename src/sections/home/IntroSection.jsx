@@ -23,16 +23,22 @@ export default function IntroSection() {
               aria-hidden="true"
             />
 
-            <span className="relative text-xs font-semibold uppercase tracking-[0.18em] text-accent">
-              Our approach
-            </span>
+            <div className="relative flex items-center gap-3">
+              <span className="h-px w-8 bg-accent" aria-hidden="true" />
+              <span className="text-xs font-semibold uppercase tracking-[0.18em] text-accent">
+                Our approach
+              </span>
+            </div>
 
-            <p className="relative mt-4 max-w-xl text-2xl font-semibold leading-snug tracking-tight text-ink sm:text-3xl md:text-4xl">
-              We're a small, senior team that designs and builds{" "}
-              <span className="text-accent">SaaS products</span> and{" "}
-              <span className="text-accent">websites</span> end to end - from the first wireframe
-              to production infrastructure - and stick around as a technical partner after
-              launch.
+            <p className="relative mt-5 max-w-xl text-2xl font-semibold leading-snug tracking-tight text-ink sm:text-3xl md:text-4xl">
+              We design and build <span className="text-accent">AI products</span>, websites, and{" "}
+              <span className="text-accent">SaaS platforms</span> end to end - from the first
+              wireframe to production-ready infrastructure.
+            </p>
+
+            <p className="relative mt-4 max-w-lg text-base leading-relaxed text-ink-soft sm:text-lg">
+              After launch, we stick around as your long-term technical partner, helping you scale,
+              improve, and evolve your product.
             </p>
 
             <div className="relative mt-6 h-1 w-12 rounded-full bg-accent" />
@@ -56,14 +62,7 @@ export default function IntroSection() {
               />
             </div>
 
-            <motion.div
-              animate={{ y: [0, -8, 0] }}
-              transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute -bottom-4 -left-3 rounded-xl border border-line bg-white px-3 py-2 shadow-soft sm:-bottom-6 sm:-left-6 sm:px-4 sm:py-3"
-            >
-              <p className="text-[10px] font-medium text-ink-soft sm:text-xs">Team size</p>
-              <p className="font-display text-base font-semibold text-accent sm:text-lg">Senior only</p>
-            </motion.div>
+          
           </motion.div>
         </div>
       </div>

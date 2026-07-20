@@ -7,7 +7,7 @@ export default function About() {
   return (
     <>
       <MissionSection />
-      <ProjectsSection />
+      {/* <ProjectsSection /> */}
       {/* <TeamSection /> */}
       <ConsultationCard />
     </>

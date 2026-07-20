@@ -36,3 +36,29 @@ h1, h2, h3, h4, h5, h6 {
   background-color: #2C4A3E;
   color: #FAF7F0;
 }
+
+/* Themed scrollbars (both axes) - accent thumb on a soft cream track,
+   matching the site palette instead of the browser default. */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #2C4A3E #F3EEE3;
+}
+
+*::-webkit-scrollbar {
+  height: 10px;
+  width: 10px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #F3EEE3;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #2C4A3E;
+  border-radius: 9999px;
+  border: 2px solid #F3EEE3;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background-color: #3F6B58;
+}

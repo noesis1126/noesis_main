@@ -256,6 +256,44 @@ export const PROJECTS = [
     year: "2026",
     role: "Full Stack Development",
   },
+  {
+    id: "takjas",
+    title: "Takjas",
+    category: "Website · Professional Services",
+    subtitle: "Corporate Consulting Firm Website",
+    description:
+      "A polished corporate website design for a professional consulting firm, built to establish credibility and guide prospective clients toward getting in touch.",
+    highlights: [
+      "Designed a confident, navy-and-editorial visual identity with a Home, About Us, Services, and Career structure suited to a client-facing professional services brand.",
+      "Crafted an About Us section spotlighting the team and firm story to build trust with prospective clients from the first scroll.",
+      "Delivered a full interactive prototype in Figma covering the homepage through to the contact flow ahead of development handoff.",
+    ],
+    tags: ["Figma", "UI/UX Design", "Corporate", "Prototype"],
+    image: "https://res.cloudinary.com/afytkgjc/image/upload/v1784482988/proj_takjas_uyx0tn.png",
+    liveUrl:
+      "https://www.figma.com/proto/shpqnJiXhuqCAUgVGcp3A9/takjas?node-id=1-1756&viewport=455%2C40%2C0.06&t=FuuRgVxSjOxt1E6K-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=1%3A1756&page-id=0%3A1",
+    year: "2026",
+    role: "UI/UX Design",
+  },
+  {
+    id: "expedition-bali-tours",
+    title: "Expedition Bali Tours",
+    category: "Website · Travel & Tourism",
+    subtitle: "Tour Operator Website Revamp",
+    description:
+      "A full design revamp for an established Bali-based 4x4 tour operator, showcasing volcano and waterfall expeditions with a premium, conversion-focused booking experience.",
+    highlights: [
+      "Redesigned the site around two core offerings - Mount Batur volcano sunrise tours and waterfall tours - with comparison guides to help visitors pick the right package.",
+      "Designed a trust-building layout highlighting certified local guides, purpose-built 4x4 vehicles, and award recognition to reassure international, family-oriented travelers.",
+      "Delivered a full interactive prototype in Figma covering the homepage, tour listings, and booking flow ahead of development handoff.",
+    ],
+    tags: ["Figma", "UI/UX Design", "Travel & Tourism", "Prototype"],
+    image: "https://res.cloudinary.com/afytkgjc/image/upload/v1784481526/proj_tours_alifh7.png",
+    liveUrl:
+      "https://www.figma.com/proto/WWhXDKWd65eITpXe3rFobP/Expenditionbali.tours-Revamp?node-id=1-1405&viewport=431%2C286%2C0.18&t=8ZplGzhcT9Wxueht-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=1%3A1405&page-id=0%3A1",
+    year: "2026",
+    role: "UI/UX Design",
+  },
 
 ];
 

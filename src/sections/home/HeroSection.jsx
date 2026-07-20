@@ -1,50 +1,41 @@
 import { motion } from "framer-motion";
-import { ArrowUpRight, Sparkles } from "lucide-react";
+import { ArrowUpRight, Sparkles, CheckCircle2 } from "lucide-react";
 import { NavLink } from "react-router-dom";
 import { COMPANY_NAME, TAGLINE } from "../../data/siteData.js";
 
+const trustPoints = ["Senior team only", "Fixed-scope estimates", "Ship in weeks, not quarters"];
+
 export default function HeroSection() {
   return (
-    <section id="home-hero" className="relative overflow-hidden">
-      {/* Full-bleed background image covering the ENTIRE hero section (both the text side and the mockup side) */}
-      <div className="absolute inset-0 h-full w-full" aria-hidden="true">
-        <img
-          src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=2000&q=70"
-          alt=""
-          className="h-full w-full object-cover"
-        />
-        {/* Cream-tinted overlay so the image reads as a background, not a full-strength photo,
-            and so the ink text stays readable on top of it */}
-        <div className="absolute inset-0 bg-cream/80" />
-      </div>
+    <section id="home-hero" className="relative flex min-h-screen items-center overflow-hidden bg-cream">
+      {/* Soft radial accent glows instead of a full photo wash - keeps the
+          section calm so the full-width mockup below reads as the hero. */}
+      <div
+        className="pointer-events-none absolute left-1/2 top-0 h-[36rem] w-[60rem] -translate-x-1/2 rounded-full bg-accent/10 blur-3xl"
+        aria-hidden="true"
+      />
 
-      <div className="relative mx-auto max-w-content px-5 pb-14 pt-24 sm:px-6 md:px-10 md:pb-28 md:pt-36">
-      <div className="grid items-center gap-10 md:grid-cols-2 md:gap-10">
-        {/* Left: text */}
+      <div className="relative mx-auto flex w-full max-w-content flex-col items-center gap-12 px-5 py-16 sm:px-6 md:flex-row md:items-center md:gap-10 md:px-10 md:py-20">
         <motion.div
-          initial={{ opacity: 0, x: -24 }}
-          animate={{ opacity: 1, x: 0 }}
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
-          className="flex flex-col items-start gap-5 md:gap-6"
+          className="flex flex-col items-center gap-5 text-center md:w-2/5 md:items-start md:gap-6 md:text-left"
         >
-          <span className="inline-flex items-center gap-2 rounded-full border border-line bg-cream-soft px-3 py-1 text-xs font-medium text-ink-soft shadow-card md:shadow-none">
-            <Sparkles size={13} className="text-accent" />
-            Product studio for founders &amp; teams
-          </span>
-
-          <h1 className="text-[2.5rem] font-semibold leading-[1.08] tracking-tight text-ink sm:text-5xl md:text-5xl lg:text-6xl">
+          {/* NOESIS wordmark */}
+          <h1 className="text-[2.75rem] font-semibold leading-[1.05] tracking-tight text-ink sm:text-6xl md:text-6xl lg:text-7xl">
             {COMPANY_NAME}
           </h1>
 
           <p className="max-w-md text-base leading-relaxed text-ink-soft sm:text-lg">{TAGLINE}</p>
 
-          <div className="flex w-full flex-wrap items-center gap-3 pt-2 sm:w-auto sm:gap-4">
+          <div className="flex w-full flex-wrap items-center justify-center gap-3 pt-1 sm:w-auto sm:gap-4 md:justify-start">
             <NavLink
               to="/services"
-              className="inline-flex flex-1 items-center justify-center gap-2 rounded-full bg-accent px-6 py-3.5 text-sm font-medium text-cream shadow-soft transition-transform hover:scale-[1.03] active:scale-[0.98] sm:flex-none sm:py-3"
+              className="group inline-flex flex-1 items-center justify-center gap-2 rounded-full bg-accent px-6 py-3.5 text-sm font-medium text-cream shadow-soft transition-transform hover:scale-[1.03] active:scale-[0.98] sm:flex-none sm:py-3"
             >
               Start a project
-              <ArrowUpRight size={16} />
+              <ArrowUpRight size={16} className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
             </NavLink>
             <NavLink
               to="/work"
@@ -53,48 +44,41 @@ export default function HeroSection() {
               See our work
             </NavLink>
           </div>
+
+          {/* Trust row - quick, scannable proof points */}
+          <ul className="flex flex-col gap-2 pt-1 sm:flex-row sm:flex-wrap sm:justify-center sm:gap-x-5 sm:gap-y-2 md:justify-start">
+            {trustPoints.map((point) => (
+              <li key={point} className="flex items-center gap-2 text-sm text-ink-soft">
+                <CheckCircle2 size={16} className="shrink-0 text-accent" />
+                {point}
+              </li>
+            ))}
+          </ul>
         </motion.div>
 
-        {/* Right: laptop mockup */}
+        {/* Product mockup, side-by-side with the copy on desktop */}
         <motion.div
-          initial={{ opacity: 0, x: 24 }}
-          animate={{ opacity: 1, x: 0 }}
+          initial={{ opacity: 0, y: 24, scale: 0.98 }}
+          animate={{ opacity: 1, y: 0, scale: 1 }}
           transition={{ duration: 0.6, ease: "easeOut", delay: 0.15 }}
-          className="relative mx-auto w-full max-w-md md:max-w-none"
+          className="relative mx-auto w-full md:w-3/5"
         >
           <motion.div
-            animate={{ y: [0, -12, 0] }}
-            transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut" }}
+            animate={{ y: [0, -10, 0] }}
+            transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
             className="relative"
           >
-            {/* Laptop screen */}
-            <div className="rounded-2xl border-[6px] border-ink bg-ink p-2 shadow-soft">
-              <div className="overflow-hidden rounded-lg">
-                {/* Screenshot of product dashboard shown inside the laptop screen */}
-                <img
-                  // src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80"
-                  src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80"
-                  alt="Dashboard preview shown on laptop screen"
-                  className="aspect-[16/10] w-full object-cover"
-                />
-              </div>
+            {/* Browser chrome frame */}
+            <div className="overflow-hidden rounded-2xl border border-line bg-white shadow-soft sm:rounded-3xl">
+             
+              <img
+                src="https://res.cloudinary.com/afytkgjc/image/upload/v1784528460/heroimg_qf5nec.png"
+                alt="Dashboard preview of a product built by the studio"
+                className="w-full object-contain"
+              />
             </div>
-            {/* Laptop base */}
-            <div className="mx-auto h-3 w-[92%] rounded-b-xl bg-ink/90" />
-            <div className="mx-auto h-1.5 w-[60%] rounded-b-md bg-ink/60" />
-
-            {/* Floating badge */}
-            <motion.div
-              animate={{ y: [0, 8, 0] }}
-              transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut", delay: 0.4 }}
-              className="absolute -left-2 top-4 rounded-xl border border-line bg-white px-3 py-2 shadow-card sm:-left-4 sm:top-6 sm:px-4 sm:py-3 md:-left-6 md:top-8"
-            >
-              <p className="text-[10px] font-medium text-ink-soft sm:text-xs">Shipped this week</p>
-              <p className="font-display text-base font-semibold text-accent sm:text-lg">12 releases</p>
-            </motion.div>
           </motion.div>
         </motion.div>
-      </div>
       </div>
     </section>
   );

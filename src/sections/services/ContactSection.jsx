@@ -21,7 +21,7 @@ const MESSAGE_LIMIT = 2000;
 const contactInfo = [
   { icon: Mail, label: "Email", value: EMAIL, href: `mailto:${EMAIL}` },
   { icon: Phone, label: "Phone", value: PHONE_DISPLAY, href: `tel:${PHONE_DISPLAY.replace(/\s+/g, "")}` },
-  { icon: MapPin, label: "Studio", value: "Pune, Maharashtra", href: null },
+  { icon: MapPin, label: "Office", value: "Warje, Pune", href: null },
 ];
 
 const inputClasses =
@@ -81,13 +81,13 @@ export default function ContactSection() {
               <label className="mb-1.5 block text-xs font-medium text-ink-soft" htmlFor="fullName">
                 Full Name
               </label>
-              <input id="fullName" name="fullName" type="text" required className={inputClasses} placeholder="Jane Doe" />
+              <input id="fullName" name="fullName" type="text" required className={inputClasses} placeholder="Priya Sharma" />
             </div>
             <div>
               <label className="mb-1.5 block text-xs font-medium text-ink-soft" htmlFor="email">
                 Email Address
               </label>
-              <input id="email" name="email" type="email" required className={inputClasses} placeholder="jane@company.com" />
+              <input id="email" name="email" type="email" required className={inputClasses} placeholder="priya@company.in" />
             </div>
           </div>
 
@@ -96,13 +96,13 @@ export default function ContactSection() {
               <label className="mb-1.5 block text-xs font-medium text-ink-soft" htmlFor="mobile">
                 Mobile Number
               </label>
-              <input id="mobile" name="mobile" type="tel" className={inputClasses} placeholder="+1 (555) 000-0000" />
+              <input id="mobile" name="mobile" type="tel" className={inputClasses} placeholder="+91 98765 43210" />
             </div>
             <div>
               <label className="mb-1.5 block text-xs font-medium text-ink-soft" htmlFor="company">
                 Company Name
               </label>
-              <input id="company" name="company" type="text" className={inputClasses} placeholder="Acme Inc." />
+              <input id="company" name="company" type="text" className={inputClasses} placeholder="Sharma Enterprises" />
             </div>
           </div>
 

@@ -34,8 +34,8 @@ export default function SimilarProjectsSection() {
     <section className="mx-auto max-w-content px-6 py-14 md:px-10 md:py-24">
       <div className="flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
         <SectionHeading
-          eyebrow="What we do"
-          title="Similar projects"
+          eyebrow="Recent work"
+          title="Projects we're proud of"
           description="A look at the kind of work we ship across our core disciplines."
         />
         <Link

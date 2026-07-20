@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { FileCheck, Users, LifeBuoy } from "lucide-react";
+import { FileCheck, Users, LifeBuoy, Clock } from "lucide-react";
 import SectionHeading from "../../components/SectionHeading.jsx";
 
 const models = [
@@ -8,6 +8,12 @@ const models = [
     title: "Fixed-Price Project",
     description:
       "Defined scope, agreed deliverables and a fixed timeline. Best for well-scoped software builds.",
+  },
+  {
+    icon: Clock,
+    title: "Time and Material Project",
+    description:
+      "Billed for actual hours and resources used. Best when scope evolves as the project takes shape.",
   },
   {
     icon: Users,
@@ -48,7 +54,7 @@ export default function EngagementModelsSection() {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, amount: 0, margin: "0px 0px -10% 0px" }}
-          className="mt-10 grid gap-5 sm:grid-cols-3"
+          className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4"
         >
           {models.map(({ icon: Icon, title, description }) => (
             <motion.div

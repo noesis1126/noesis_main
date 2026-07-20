@@ -77,7 +77,7 @@ export default function ServicesList() {
         <SectionHeading
           eyebrow="Services"
           title="End-to-end IT services"
-          description="Choose a specific service or embed our team into yours. Senior, certified engineers on every engagement - no juniors, no offshore handoffs."
+          titleClassName="sm:text-4xl md:text-5xl"
         />
         <SearchBar
           value={query}

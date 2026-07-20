@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 
 // Reusable eyebrow + heading + description block used at the top of sections
-export default function SectionHeading({ eyebrow, title, description, align = "left" }) {
+export default function SectionHeading({ eyebrow, title, description, align = "left", titleClassName = "" }) {
   const alignment = align === "center" ? "items-center text-center mx-auto" : "items-start text-left";
 
   return (
@@ -17,7 +17,7 @@ export default function SectionHeading({ eyebrow, title, description, align = "l
           {eyebrow}
         </span>
       )}
-      <h2 className="text-[1.75rem] font-semibold leading-tight tracking-tight text-ink sm:text-3xl md:text-4xl">{title}</h2>
+      <h2 className={`text-[1.75rem] font-semibold leading-tight tracking-tight text-ink sm:text-3xl md:text-4xl ${titleClassName}`}>{title}</h2>
       {description && <p className="text-[15px] leading-relaxed text-ink-soft sm:text-base">{description}</p>}
     </motion.div>
   );
