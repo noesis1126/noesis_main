@@ -1,7 +1,13 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
+import emailjs from "@emailjs/browser";
 import { Mail, Phone, MapPin, Send, ShieldCheck } from "lucide-react";
 import { EMAIL, PHONE_DISPLAY } from "../../data/siteData.js";
+
+const EMAILJS_SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+const EMAILJS_ADMIN_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_ADMIN_TEMPLATE_ID;
+const EMAILJS_USER_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_USER_TEMPLATE_ID;
+const EMAILJS_PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
 const SERVICE_OPTIONS = [
   "Web Development",
@@ -29,12 +35,47 @@ const inputClasses =
 
 export default function ContactSection() {
   const [message, setMessage] = useState("");
-  const [status, setStatus] = useState("idle"); // idle | sent
+  const [status, setStatus] = useState("idle"); // idle | sending | sent | error
 
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
     e.preventDefault();
-    // No backend wired up yet - swap this for a real API/email call when ready.
-    setStatus("sent");
+
+    if (!EMAILJS_SERVICE_ID || !EMAILJS_ADMIN_TEMPLATE_ID || !EMAILJS_USER_TEMPLATE_ID || !EMAILJS_PUBLIC_KEY) {
+      console.error("EmailJS env vars are missing. Check your .env file against .env.example.");
+      setStatus("error");
+      return;
+    }
+
+    const form = e.target;
+    const formData = new FormData(form);
+    const templateParams = {
+      fullName: formData.get("fullName"),
+      email: formData.get("email"),
+      mobile: formData.get("mobile") || "Not provided",
+      company: formData.get("company") || "Not provided",
+      service: formData.get("service"),
+      budget: formData.get("budget") || "Not specified",
+      timeline: formData.get("timeline") || "Not specified",
+      projectMessage: formData.get("projectMessage") || "No additional details provided.",
+      to_email: EMAIL,
+    };
+
+    setStatus("sending");
+
+    try {
+      await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_ADMIN_TEMPLATE_ID, templateParams, {
+        publicKey: EMAILJS_PUBLIC_KEY,
+      });
+      await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_USER_TEMPLATE_ID, templateParams, {
+        publicKey: EMAILJS_PUBLIC_KEY,
+      });
+      setStatus("sent");
+      setMessage("");
+      form.reset();
+    } catch (err) {
+      console.error("Failed to send contact form emails:", err);
+      setStatus("error");
+    }
   }
 
   return (
@@ -178,13 +219,20 @@ export default function ContactSection() {
 
           <motion.button
             type="submit"
+            disabled={status === "sending"}
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
-            className="mt-1 inline-flex items-center justify-center gap-2 rounded-full bg-accent px-6 py-3 text-sm font-medium text-cream shadow-soft transition-colors hover:bg-accent-light"
+            className="mt-1 inline-flex items-center justify-center gap-2 rounded-full bg-accent px-6 py-3 text-sm font-medium text-cream shadow-soft transition-colors hover:bg-accent-light disabled:cursor-not-allowed disabled:opacity-70"
           >
             <Send size={16} />
-            {status === "sent" ? "Message sent!" : "Send Message"}
+            {status === "sending" ? "Sending..." : status === "sent" ? "Message sent!" : "Send Message"}
           </motion.button>
+
+          {status === "error" && (
+            <p className="text-xs font-medium text-red-600">
+              Something went wrong sending your message. Please try again or email us directly at {EMAIL}.
+            </p>
+          )}
 
           <p className="flex items-center gap-1.5 text-xs text-ink-soft">
             <ShieldCheck size={14} className="shrink-0 text-accent" />
