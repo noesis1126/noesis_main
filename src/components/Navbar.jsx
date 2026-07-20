@@ -79,10 +79,10 @@ export default function Navbar() {
             ))}
             <NavLink
               to="/contact"
-              className="inline-flex items-center gap-1 rounded-full bg-accent px-4 py-2 text-sm font-medium text-cream transition-transform hover:scale-[1.03] active:scale-[0.98]"
+              className="group inline-flex items-center gap-1 rounded-full bg-accent px-4 py-2 text-sm font-medium text-cream transition-transform hover:scale-[1.03] active:scale-[0.98]"
             >
               Get in touch
-              <ArrowUpRight size={15} />
+              <ArrowUpRight size={15} className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
             </NavLink>
           </nav>
 

@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Quote } from "lucide-react";
+import { PLACEHOLDER_TEAM_WORK } from "../../data/siteData.js";
 
 export default function IntroSection() {
   return (
@@ -53,9 +54,8 @@ export default function IntroSection() {
             className="relative mx-auto w-full max-w-sm"
           >
             <div className="overflow-hidden rounded-2xl border border-line shadow-card">
-              {/* REPLACE ME: photo representing the team at work */}
               <img
-                src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80"
+                src={PLACEHOLDER_TEAM_WORK}
                 alt="Team collaborating on a product build"
                 loading="lazy"
                 className="aspect-[4/5] w-full object-cover"

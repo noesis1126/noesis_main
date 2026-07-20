@@ -7,8 +7,8 @@ export default function About() {
   return (
     <>
       <MissionSection />
-      {/* <ProjectsSection /> */}
-      {/* <TeamSection /> */}
+      <ProjectsSection />
+      <TeamSection />
       <ConsultationCard />
     </>
   );

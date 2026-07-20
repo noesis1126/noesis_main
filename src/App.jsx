@@ -10,6 +10,9 @@ import ServiceDetail from "./pages/ServiceDetail.jsx";
 import Work from "./pages/Work.jsx";
 import WorkDetail from "./pages/WorkDetail.jsx";
 import Contact from "./pages/Contact.jsx";
+import StrengthDetail from "./pages/StrengthDetail.jsx";
+import PrivacyPolicy from "./pages/PrivacyPolicy.jsx";
+import TermsOfService from "./pages/TermsOfService.jsx";
 
 // Scrolls the viewport to the top whenever the route changes
 function ScrollToTop() {
@@ -34,6 +37,9 @@ export default function App() {
           <Route path="/work" element={<Work />} />
           <Route path="/work/:id" element={<WorkDetail />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/strengths/:id" element={<StrengthDetail />} />
+          <Route path="/privacy" element={<PrivacyPolicy />} />
+          <Route path="/terms" element={<TermsOfService />} />
         </Routes>
       </main>
       <Footer />

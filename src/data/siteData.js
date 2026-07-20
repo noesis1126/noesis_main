@@ -6,9 +6,13 @@ import { Home, Info, Layers, Briefcase, Mail } from "lucide-react";
 // ---------------------------------------------------------------------------
 
 export const COMPANY_NAME = "NOESIS";
-export const TAGLINE = "We design and build website , mobile app , AI/ML & Saas products that ship.";
+export const TAGLINE = "We design and build websites, mobile apps, AI/ML and SaaS products that ship.";
 
-export const EMAIL = "[EMAIL_ADDRESS]";
+// Generic placeholder images used across sections
+export const PLACEHOLDER_TEAM_WORK = "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80";
+export const PLACEHOLDER_CTA_BG = "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1600&q=80";
+
+export const EMAIL = "noesis1126@gmail.com";
 
 // Display format shown on the page (with country code, spaced for readability)
 export const PHONE_DISPLAY = "+91 70572 05190";

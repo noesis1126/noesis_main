@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { NavLink } from "react-router-dom";
 import { ArrowUpRight } from "lucide-react";
+import { PLACEHOLDER_CTA_BG } from "../../data/siteData.js";
 
 export default function CTASection() {
   return (
@@ -12,9 +13,8 @@ export default function CTASection() {
         transition={{ duration: 0.55, ease: "easeOut" }}
         className="relative flex flex-col items-start justify-between gap-6 overflow-hidden rounded-3xl px-6 py-10 sm:gap-8 sm:px-8 sm:py-12 md:flex-row md:items-center md:px-14 md:py-16"
       >
-        {/* REPLACE ME: full-cover background image for the CTA card */}
         <img
-          src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1600&q=80"
+          src={PLACEHOLDER_CTA_BG}
           alt=""
           aria-hidden="true"
           loading="lazy"
@@ -33,10 +33,10 @@ export default function CTASection() {
         </div>
         <NavLink
           to="/contact"
-          className="relative inline-flex w-full shrink-0 items-center justify-center gap-2 rounded-full bg-accent px-6 py-3.5 text-sm font-medium text-cream transition-transform hover:scale-[1.03] active:scale-[0.98] sm:w-auto sm:py-3"
+          className="group relative inline-flex w-full shrink-0 items-center justify-center gap-2 rounded-full bg-accent px-6 py-3.5 text-sm font-medium text-cream transition-transform hover:scale-[1.03] active:scale-[0.98] sm:w-auto sm:py-3"
         >
           Talk to us
-          <ArrowUpRight size={16} />
+          <ArrowUpRight size={16} className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
         </NavLink>
       </motion.div>
     </section>
