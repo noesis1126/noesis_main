@@ -15,18 +15,18 @@ export default function Footer() {
           sits on top of the copyright row when the page is scrolled all
           the way down. */}
       <div className="mx-auto max-w-content px-6 pb-28 pt-12 sm:pb-12 md:px-10">
-        <div className="grid gap-10 text-center sm:grid-cols-2 sm:text-left md:grid-cols-3">
-          <div className="flex flex-col items-center sm:items-start">
+        <div className="grid gap-10 sm:grid-cols-2 md:grid-cols-3">
+          <div className="flex flex-col items-start">
             <img src={LOGO_FULL} alt={`${COMPANY_NAME} logo`} className="h-10 w-auto" />
-            <p className="mt-3 max-w-xs text-sm leading-relaxed text-ink-soft">
+            <p className="mt-4 max-w-xs text-sm leading-relaxed text-ink-soft">
               We build SaaS products, websites, and provide hands-on technical consulting for teams
               that want to move fast.
             </p>
           </div>
 
-          <div className="flex flex-col items-center sm:items-start">
+          <div className="flex flex-col items-start">
             <p className="text-sm font-semibold text-ink">Quick links</p>
-            <ul className="mt-3 space-y-2">
+            <ul className="mt-4 space-y-2.5">
               {NAV_LINKS.map((link) => (
                 <li key={link.path}>
                   <NavLink to={link.path} className="text-sm text-ink-soft transition-colors hover:text-accent">
@@ -37,31 +37,40 @@ export default function Footer() {
             </ul>
           </div>
 
-          <div className="flex flex-col items-center sm:items-start">
+          <div className="flex flex-col items-start">
             <p className="text-sm font-semibold text-ink">Contact</p>
             <a
               href={`mailto:${EMAIL}`}
-              className="mt-3 flex items-center gap-2 text-sm text-ink-soft transition-colors hover:text-accent"
+              className="mt-4 flex items-center gap-2.5 text-sm text-ink-soft transition-colors hover:text-accent"
             >
-              <Mail size={16} />
+              <Mail size={16} className="text-accent/70" />
               {EMAIL}
             </a>
             <a
               href={`tel:${PHONE_DISPLAY.replace(/\s/g, "")}`}
-              className="mt-2 flex items-center gap-2 text-sm text-ink-soft transition-colors hover:text-accent"
+              className="mt-3 flex items-center gap-2.5 text-sm text-ink-soft transition-colors hover:text-accent"
             >
-              <Phone size={16} />
+              <Phone size={16} className="text-accent/70" />
               {PHONE_DISPLAY}
             </a>
           </div>
         </div>
 
-        {/* Bottom bar: copyright + socials together, stacked and centered
-            on mobile, side-by-side on larger screens. */}
-        <div className="mt-10 flex flex-col items-center gap-5 border-t border-line pt-6 sm:flex-row sm:justify-between">
-          <p className="order-2 text-xs text-ink-soft sm:order-1">
-            © {new Date().getFullYear()} {COMPANY_NAME}. All rights reserved.
-          </p>
+        {/* Bottom bar: stacked on mobile, side-by-side on larger screens. */}
+        <div className="mt-12 flex flex-col gap-6 border-t border-line pt-6 sm:flex-row sm:items-center sm:justify-between sm:gap-5">
+          <div className="order-2 flex flex-col gap-3 sm:order-1 sm:flex-row sm:items-center sm:gap-6">
+            <p className="text-xs text-ink-soft">
+              © {new Date().getFullYear()} {COMPANY_NAME}. All rights reserved.
+            </p>
+            <div className="flex items-center gap-4 text-xs font-medium text-ink-soft">
+              <NavLink to="/privacy" className="transition-colors hover:text-accent">
+                Privacy Policy
+              </NavLink>
+              <NavLink to="/terms" className="transition-colors hover:text-accent">
+                Terms of Service
+              </NavLink>
+            </div>
+          </div>
           <div className="order-1 flex gap-3 sm:order-2">
             {socialIcons.map(({ icon: Icon, href, label }) => (
               <a
