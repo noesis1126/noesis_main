@@ -6,9 +6,9 @@ import { Home, Info, Layers, Briefcase, Mail } from "lucide-react";
 // ---------------------------------------------------------------------------
 
 export const COMPANY_NAME = "NOESIS";
-export const TAGLINE = "We design and build SaaS products and websites that ship.";
+export const TAGLINE = "We design and build website , mobile app , AI/ML & Saas products that ship.";
 
-export const EMAIL = "noesis1126@gmail.com";
+export const EMAIL = "[EMAIL_ADDRESS]";
 
 // Display format shown on the page (with country code, spaced for readability)
 export const PHONE_DISPLAY = "+91 70572 05190";

@@ -7,7 +7,7 @@ import { PROJECTS } from "../../data/projectsData.js";
 // Pick one representative project per core service line for the homepage
 // teaser. Swap the ids below to feature different case studies - the
 // layout is built to take three.
-const FEATURED_IDS = ["it-is-my-town", "zoomtod", "maha-gps"];
+const FEATURED_IDS = ["gcon-nanded", "zoomtod", "maha-gps"];
 const featured = FEATURED_IDS.map((id) => PROJECTS.find((p) => p.id === id)).filter(Boolean);
 
 function iconForCategory(category = "") {
@@ -34,9 +34,9 @@ export default function SimilarProjectsSection() {
     <section className="mx-auto max-w-content px-6 py-14 md:px-10 md:py-24">
       <div className="flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
         <SectionHeading
-          eyebrow="Recent work"
-          title="Projects we're proud of"
-          description="A look at the kind of work we ship across our core disciplines."
+          eyebrow="OUR CORE STRENGTHS"
+          title="What makes our work stand out"
+          description="A closer look at the capabilities, experience, and thinking behind every solution we deliver."
         />
         <Link
           to="/work"

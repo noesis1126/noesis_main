@@ -8,8 +8,18 @@ const trustPoints = ["Senior team only", "Fixed-scope estimates", "Ship in weeks
 export default function HeroSection() {
   return (
     <section id="home-hero" className="relative flex min-h-screen items-center overflow-hidden bg-cream">
-      {/* Soft radial accent glows instead of a full photo wash - keeps the
-          section calm so the full-width mockup below reads as the hero. */}
+      {/* Full-bleed background photo, softly blurred and cream-tinted so it
+          reads as texture behind the copy rather than a full-strength photo. */}
+      <div className="pointer-events-none absolute inset-0 h-full w-full" aria-hidden="true">
+        <img
+          src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=2000&q=70"
+          alt=""
+          className="h-full w-full scale-110 object-cover blur-sm"
+        />
+        <div className="absolute inset-0 bg-cream/80" />
+      </div>
+
+      {/* Soft radial accent glow on top of the photo for extra depth */}
       <div
         className="pointer-events-none absolute left-1/2 top-0 h-[36rem] w-[60rem] -translate-x-1/2 rounded-full bg-accent/10 blur-3xl"
         aria-hidden="true"

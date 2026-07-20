@@ -19,26 +19,24 @@ export default function Navbar() {
     };
   }, [open]);
 
-  // On the home page, watch the actual hero section (#home-hero) and reveal
-  // the bar the moment it's fully scrolled out of view - works no matter how
-  // tall the hero ends up being.
+  // On the home page, the bar only stays hidden for the very first sliver of
+  // scroll (i.e. the initial hero view at the top of the page) and reappears
+  // as soon as the user scrolls a small amount - even while still inside the
+  // hero section.
+  const SCROLL_REVEAL_THRESHOLD = 80;
   useEffect(() => {
     if (!isHome) {
       setPastHero(false);
       return;
     }
-    const heroEl = document.getElementById("home-hero");
-    if (!heroEl) return;
-    const observer = new IntersectionObserver(
-      ([entry]) => setPastHero(!entry.isIntersecting),
-      { threshold: 0, rootMargin: "-1px 0px 0px 0px" }
-    );
-    observer.observe(heroEl);
-    return () => observer.disconnect();
+    const handleScroll = () => setPastHero(window.scrollY > SCROLL_REVEAL_THRESHOLD);
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
   }, [isHome]);
 
-  // On the home hero, the entire bar stays off-screen until the user
-  // scrolls past the hero; every other page keeps it visible as usual.
+  // On the home page, the bar stays off-screen only at the very top; every
+  // other page keeps it visible as usual.
   const hiddenOnHero = isHome && !pastHero;
 
   return (
