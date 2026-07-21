@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Check, ArrowUpRight } from "lucide-react";
 import { SERVICES } from "../data/servicesData.js";
+import { useRef, useState, useEffect } from "react";
 
 const container = {
   hidden: {},
@@ -41,6 +42,22 @@ export default function ServicesGrid({
   // integration chips per card - too much content to swipe through, so it
   // keeps a plain stacked column on mobile like before.
   const useMobileCarousel = !isFull && !interactive;
+
+  const scrollerRef = useRef(null);
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  useEffect(() => {
+    if (!useMobileCarousel) return;
+    const el = scrollerRef.current;
+    if (!el) return;
+    const onScroll = () => {
+      const cardWidth = el.scrollWidth / services.length;
+      const index = Math.round(el.scrollLeft / cardWidth);
+      setActiveIndex(Math.min(Math.max(index, 0), services.length - 1));
+    };
+    el.addEventListener("scroll", onScroll, { passive: true });
+    return () => el.removeEventListener("scroll", onScroll);
+  }, [useMobileCarousel, services.length]);
 
   function renderCard({ id, icon: Icon, title, description, features, image, integrations }) {
     const isSelected = interactive && selectedId === id;
@@ -142,28 +159,39 @@ export default function ServicesGrid({
       {/* ── MOBILE (<sm): horizontal snap-scroll carousel ──
           Same swipe-with-a-peek pattern as the strengths section, so the
           two Home page preview grids feel like one design language instead
-          of a stacked column of cards competing for attention. */}
+          of a stacked column of cards competing for attention.
+          NOTE: no outer -mx/px here anymore - cards run flush to the
+          screen edges, no left/right gap before the first/last card. */}
       <motion.div
         variants={container}
         initial="hidden"
         whileInView="show"
         viewport={{ once: true, amount: 0, margin: "0px 0px -10% 0px" }}
-        className="relative sm:hidden"
+        className="relative overflow-x-hidden md:hidden"
       >
-        <div className="flex snap-x snap-mandatory gap-4 overflow-x-auto pb-3 -mx-6 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+        <div
+          ref={scrollerRef}
+          className="flex snap-x snap-mandatory gap-4 overflow-x-auto pb-3 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+        >
           {services.map((service) => (
-            <div key={service.id} className="w-[78%] shrink-0 snap-start xs:w-[70%]">
+            <div key={service.id} className="w-[82%] shrink-0 snap-center xs:w-[75%]">
               {renderCard(service)}
             </div>
           ))}
-          <div className="w-2 shrink-0" aria-hidden="true" />
+          <div className="w-4 shrink-0" aria-hidden="true" />
         </div>
 
-        {/* <div className="pointer-events-none absolute bottom-3 right-0 top-0 w-4 bg-gradient-to-l from-cream-soft/40 to-transparent" /> */}
+        <div className="pointer-events-none absolute bottom-0 right-0 top-0 w-8 bg-gradient-to-l from-cream-soft to-transparent" />
 
         <div className="mt-4 flex justify-center gap-1.5">
-          {services.map((s) => (
-            <span key={s.id} className="h-1.5 w-1.5 rounded-full bg-ink/15" aria-hidden="true" />
+          {services.map((s, i) => (
+            <span
+              key={s.id}
+              className={`h-1.5 rounded-full transition-all duration-300 ${
+                i === activeIndex ? "w-5 bg-accent" : "w-1.5 bg-ink/15"
+              }`}
+              aria-hidden="true"
+            />
           ))}
         </div>
       </motion.div>
@@ -174,7 +202,7 @@ export default function ServicesGrid({
         initial="hidden"
         whileInView="show"
         viewport={{ once: true, amount: 0, margin: "0px 0px -10% 0px" }}
-        className={`hidden gap-5 sm:grid sm:gap-6 ${gridCols}`}
+        className={`hidden gap-5 md:grid md:gap-6 ${gridCols}`}
       >
         {services.map((service) => renderCard(service))}
       </motion.div>

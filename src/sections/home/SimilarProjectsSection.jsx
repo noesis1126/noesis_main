@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { ArrowUpRight } from "lucide-react";
 import SectionHeading from "../../components/SectionHeading.jsx";
 import { STRENGTHS } from "../../data/strengthsData.js";
+import { useRef, useState, useEffect } from "react";
 
 const container = {
   hidden: {},
@@ -53,6 +54,21 @@ function StrengthCard({ id, Icon, eyebrow, title, tagline, image }) {
 }
 
 export default function SimilarProjectsSection() {
+  const scrollerRef = useRef(null);
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  useEffect(() => {
+    const el = scrollerRef.current;
+    if (!el) return;
+    const onScroll = () => {
+      const cardWidth = el.scrollWidth / STRENGTHS.length;
+      const index = Math.round(el.scrollLeft / cardWidth);
+      setActiveIndex(Math.min(Math.max(index, 0), STRENGTHS.length - 1));
+    };
+    el.addEventListener("scroll", onScroll, { passive: true });
+    return () => el.removeEventListener("scroll", onScroll);
+  }, []);
+
   return (
     <section className="mx-auto max-w-content py-14 md:px-10 md:py-24">
       <div className="flex flex-col items-start gap-4 px-6 md:flex-row md:items-end md:justify-between md:gap-6 md:px-0">
@@ -63,7 +79,7 @@ export default function SimilarProjectsSection() {
         />
         <Link
           to="/work"
-          className="inline-flex shrink-0 items-center gap-1.5 rounded-full border border-accent/20 bg-accent/5 px-4 py-2 text-sm font-medium text-accent transition-transform active:scale-[0.97] md:border-none md:bg-transparent md:px-0 md:py-0 md:hover:translate-x-0.5"
+          className="inline-flex shrink-0 items-center gap-1.5 rounded-full border border-accent/20 bg-accent/5 px-4 py-2.5 text-sm font-medium text-accent transition-transform active:scale-[0.97] md:border-none md:bg-transparent md:px-0 md:py-0 md:hover:translate-x-0.5"
         >
           View all work
           <ArrowUpRight size={15} />
@@ -78,9 +94,10 @@ export default function SimilarProjectsSection() {
         initial="hidden"
         whileInView="show"
         viewport={{ once: true, margin: "0px 0px -8% 0px" }}
-        className="relative mt-8 md:hidden"
+        className="relative mt-8 overflow-x-hidden md:hidden"
       >
         <div
+          ref={scrollerRef}
           className="flex snap-x snap-mandatory gap-4 overflow-x-auto scroll-pl-6 px-6 pb-3 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
         >
           {STRENGTHS.map((strength) => (
@@ -93,16 +110,22 @@ export default function SimilarProjectsSection() {
             </motion.div>
           ))}
           {/* trailing spacer so the last card can snap fully into view */}
-          <div className="w-2 shrink-0" aria-hidden="true" />
+          <div className="w-4 shrink-0" aria-hidden="true" />
         </div>
 
         {/* edge fade hinting there's more to scroll */}
         <div className="pointer-events-none absolute bottom-3 right-0 top-0 w-10 bg-gradient-to-l from-cream to-transparent" />
 
-        {/* progress dots — purely decorative scroll affordance */}
+        {/* progress dots — reflect the actual active card */}
         <div className="mt-4 flex justify-center gap-1.5 px-6">
-          {STRENGTHS.map((s) => (
-            <span key={s.id} className="h-1.5 w-1.5 rounded-full bg-ink/15" aria-hidden="true" />
+          {STRENGTHS.map((s, i) => (
+            <span
+              key={s.id}
+              className={`h-1.5 rounded-full transition-all duration-300 ${
+                i === activeIndex ? "w-5 bg-accent" : "w-1.5 bg-ink/15"
+              }`}
+              aria-hidden="true"
+            />
           ))}
         </div>
       </motion.div>
