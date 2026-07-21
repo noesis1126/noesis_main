@@ -1,6 +1,12 @@
 import { motion } from "framer-motion";
-import { Quote } from "lucide-react";
+import { Quote, Bot, Globe, Layers3, Sparkles } from "lucide-react";
 import { PLACEHOLDER_TEAM_WORK } from "../../data/siteData.js";
+
+const capabilities = [
+  { label: "AI products", icon: Bot },
+  { label: "Websites", icon: Globe },
+  { label: "SaaS platforms", icon: Layers3 },
+];
 
 export default function IntroSection() {
   return (
@@ -43,6 +49,21 @@ export default function IntroSection() {
             </p>
 
             <div className="relative mt-6 h-1 w-12 rounded-full bg-accent" />
+
+            {/* Capability chips — gives the eye something textured to land on
+                besides two paragraphs of prose, and reinforces the three
+                product types called out above in scannable form. */}
+            <ul className="relative mt-7 flex flex-wrap gap-2.5">
+              {capabilities.map(({ label, icon: Icon }) => (
+                <li
+                  key={label}
+                  className="flex items-center gap-2 rounded-full border border-accent/15 bg-white px-3.5 py-2 text-sm font-medium text-ink shadow-[0_2px_8px_-4px_rgba(0,0,0,0.08)]"
+                >
+                  <Icon size={15} className="shrink-0 text-accent" />
+                  {label}
+                </li>
+              ))}
+            </ul>
           </motion.div>
 
           {/* Right: supporting image with a floating badge, echoes the hero mockup treatment */}
@@ -62,7 +83,17 @@ export default function IntroSection() {
               />
             </div>
 
-          
+            {/* Floating badge — small accent moment that breaks the flat
+                rectangle of the photo and echoes the hero's polish. */}
+            <div className="absolute -bottom-5 -right-3 flex items-center gap-2 rounded-2xl border border-line bg-white px-4 py-3 shadow-card sm:-right-5">
+              <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-accent/10">
+                <Sparkles size={16} className="text-accent" />
+              </span>
+              <div className="leading-tight">
+                <p className="text-sm font-semibold text-ink">End-to-end</p>
+                <p className="text-xs text-ink-soft">idea to launch</p>
+              </div>
+            </div>
           </motion.div>
         </div>
       </div>

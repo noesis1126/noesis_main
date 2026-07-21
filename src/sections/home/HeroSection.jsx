@@ -11,84 +11,89 @@ export default function HeroSection() {
 
       {/* ─────────────────────────────────────────────────────────
           MOBILE  (<md)
-          Single-canvas layout: image fills the bottom half of the
-          viewport, content card sits on top — no dead gap, no bleed.
+          Image FIRST (top, full clarity), text SECOND (below).
       ───────────────────────────────────────────────────────── */}
-      <div className="relative md:hidden" style={{ minHeight: "100dvh" }}>
+      <div className="flex flex-col md:hidden">
 
-        {/* Background image — anchored to bottom so character is always visible */}
-        <div className="absolute inset-x-0 bottom-0 h-[58%]">
-          <motion.img
+        {/* Image block — sits at the top, sharp, no overlay on top of it */}
+        <motion.div
+          initial={{ opacity: 0, scale: 1.04 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="relative h-[46vh] w-full overflow-hidden"
+        >
+          <img
             src="/main_banner_img.png"
             alt=""
             aria-hidden="true"
-            initial={{ opacity: 0, scale: 1.04 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, ease: "easeOut", delay: 0.25 }}
             className="h-full w-full object-cover object-[72%_30%]"
           />
-          {/* Top-edge fade blends image into cream content above */}
-          <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-cream to-transparent" />
-        </div>
+          {/* Faint fades so the image edges melt into the cream bg instead of a hard cutoff */}
+          <div className="pointer-events-none absolute inset-y-0 left-0 w-10 bg-gradient-to-r from-cream/60 to-transparent" />
+          <div className="pointer-events-none absolute inset-x-0 bottom-0 h-14 bg-gradient-to-t from-cream to-transparent" />
+        </motion.div>
 
-        {/* Content — sits in top 50% on solid cream, no overlap with character */}
-        <div className="relative z-10 flex flex-col gap-0 pt-24">
-          <motion.div
-            initial={{ opacity: 0, y: 18 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.55, ease: "easeOut" }}
-            className="flex flex-col items-center gap-5 bg-cream px-6 pb-10 text-center"
-          >
-            {/* Eyebrow label */}
-            <div className="inline-flex items-center gap-2 rounded-full border border-accent/20 bg-accent/5 px-3.5 py-1">
-              <span className="h-1.5 w-1.5 rounded-full bg-accent" />
-              <span className="text-xs font-semibold uppercase tracking-[0.15em] text-accent">
-                Design · Build · Ship
-              </span>
-            </div>
+        {/* Content — below the image, plain cream background */}
+        <motion.div
+          initial={{ opacity: 0, y: 18 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.55, ease: "easeOut", delay: 0.15 }}
+          className="flex flex-col items-center gap-6 bg-cream px-6 pb-12 pt-10 text-center"
+        >
+          {/* Eyebrow label */}
+          <div className="inline-flex items-center gap-2 rounded-full border border-accent/20 bg-accent/5 px-3.5 py-1">
+            <span className="h-1.5 w-1.5 rounded-full bg-accent" />
+            <span className="text-xs font-semibold uppercase tracking-[0.15em] text-accent">
+              Design · Build · Ship
+            </span>
+          </div>
 
-            <h1 className="text-[2.75rem] font-bold leading-[1.05] tracking-tight text-ink">
-              {COMPANY_NAME}
-            </h1>
+          <h1 className="text-[2.75rem] font-bold leading-[1.05] tracking-tight text-ink">
+            {COMPANY_NAME}
+          </h1>
 
-            {/* Tagline — rewritten to avoid the comma-lead wrap bug */}
-            <p className="max-w-[17rem] text-base leading-relaxed text-ink-soft">
-              We design &amp; build websites, mobile apps, AI/ML and SaaS products that <em className="not-italic font-semibold text-accent">ship</em>.
-            </p>
+          <p className="max-w-[17rem] text-base leading-relaxed text-ink-soft">
+            We design &amp; build websites, mobile apps, AI/ML and SaaS products that <em className="not-italic font-semibold text-accent">ship</em>.
+          </p>
 
-            <div className="flex w-full max-w-xs gap-3">
-              <NavLink
-                to="/services"
-                className="group inline-flex flex-1 items-center justify-center gap-1.5 rounded-full bg-accent px-4 py-3.5 text-sm font-semibold text-cream shadow-soft active:scale-[0.97]"
+          {/* CTA buttons — stacked, full-width, clearer hierarchy + real depth */}
+          <div className="flex w-full max-w-xs flex-col gap-3 pt-1">
+            <NavLink
+              to="/services"
+              className="group relative inline-flex items-center justify-center gap-1.5 overflow-hidden rounded-2xl bg-accent px-5 py-4 text-[15px] font-semibold text-cream shadow-[0_10px_24px_-8px_rgba(0,0,0,0.35)] transition-transform duration-150 active:scale-[0.97] active:shadow-[0_4px_12px_-6px_rgba(0,0,0,0.3)]"
+            >
+              <span className="pointer-events-none absolute inset-0 bg-gradient-to-b from-white/15 to-transparent" />
+              <span className="relative">Start a project</span>
+              <ArrowUpRight size={16} className="relative shrink-0 transition-transform group-active:translate-x-0.5 group-active:-translate-y-0.5" />
+            </NavLink>
+
+            <NavLink
+              to="/work"
+              className="inline-flex items-center justify-center gap-1.5 rounded-2xl border border-ink/12 bg-white px-5 py-4 text-[15px] font-semibold text-ink shadow-[0_2px_10px_-4px_rgba(0,0,0,0.12)] transition-transform duration-150 active:scale-[0.97] active:bg-ink/[0.03]"
+            >
+              See our work
+            </NavLink>
+          </div>
+
+          {/* Trust points — horizontal chip row instead of a stacked list */}
+          <ul className="flex w-full flex-wrap items-center justify-center gap-x-3 gap-y-2 border-t border-ink/10 pt-5">
+            {trustPoints.map((point) => (
+              <li
+                key={point}
+                className="flex items-center gap-1.5 rounded-full bg-ink/[0.03] px-3 py-1.5 text-[13px] font-medium text-ink-soft"
               >
-                Start a project
-                <ArrowUpRight size={14} className="transition-transform group-active:translate-x-0.5 group-active:-translate-y-0.5" />
-              </NavLink>
-              <NavLink
-                to="/work"
-                className="inline-flex flex-1 items-center justify-center rounded-full border border-ink/15 bg-white px-4 py-3.5 text-sm font-semibold text-ink shadow-soft"
-              >
-                See our work
-              </NavLink>
-            </div>
-
-            {/* Trust points — centered, matches heading alignment */}
-            <ul className="flex flex-col items-center gap-2">
-              {trustPoints.map((point) => (
-                <li key={point} className="flex items-center gap-2 text-sm text-ink-soft">
-                  <CheckCircle2 size={14} className="shrink-0 text-accent" />
-                  {point}
-                </li>
-              ))}
-            </ul>
-          </motion.div>
-        </div>
-
+                <CheckCircle2 size={13} className="shrink-0 text-accent" />
+                {point}
+              </li>
+            ))}
+          </ul>
+        </motion.div>
       </div>
 
       {/* ─────────────────────────────────────────────────────────
-          DESKTOP  (md+)
-          Full-viewport image bg, text overlaid left with scrim.
+          DESKTOP  (md+)  — unchanged
+          Full-viewport image bg — kept sharp, overlay lightened
+          so it reads as clear, not washed out/blurry.
       ───────────────────────────────────────────────────────── */}
       <div className="relative hidden min-h-screen items-center md:flex">
         <motion.div
@@ -102,7 +107,9 @@ export default function HeroSection() {
             alt=""
             className="h-full w-full object-cover object-center"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-cream via-cream/75 to-transparent" />
+          {/* Lighter, narrower scrim — only enough to keep text legible,
+              image stays crisp instead of looking hazy/blurred */}
+          <div className="absolute inset-0 bg-gradient-to-r from-cream via-cream/35 to-transparent md:w-2/3" />
         </motion.div>
 
         <div
