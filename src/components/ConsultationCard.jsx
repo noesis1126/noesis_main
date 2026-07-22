@@ -1,7 +1,10 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import { PhoneCall } from "lucide-react";
 import { PHONE_NUMBER } from "../data/siteData.js";
 import { WhatsAppIcon, ChatBubbleAnimation } from "./icons.jsx";
+
+const MotionLink = motion.create(Link);
 
 // The "Book a free consultation" card - same content as the floating widget
 // popover, but embedded inline at the bottom of a page instead of a popup.
@@ -22,15 +25,15 @@ export default function ConsultationCard() {
           </p>
 
           <div className="mt-8 flex flex-wrap items-center gap-3 sm:gap-4">
-            <motion.a
-              href="/contact"
+            <MotionLink
+              to="/contact"
               whileHover={{ scale: 1.04 }}
               whileTap={{ scale: 0.96 }}
               className="inline-flex items-center gap-2 rounded-full bg-accent px-6 py-3 text-sm font-medium text-cream shadow-soft"
             >
               <PhoneCall size={16} />
               Free Consultation
-            </motion.a>
+            </MotionLink>
 
             <motion.a
               href={`https://wa.me/${PHONE_NUMBER}`}

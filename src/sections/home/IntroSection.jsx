@@ -35,13 +35,13 @@ export default function IntroSection() {
               </span>
             </div>
 
-            <p className="relative mt-4 max-w-xl text-xl font-semibold leading-snug tracking-tight text-ink sm:mt-5 sm:text-2xl md:text-3xl lg:text-4xl">
+            <p className="relative mt-4 max-w-xl text-xl font-bold leading-snug tracking-tight text-ink sm:mt-5 sm:text-2xl md:text-3xl lg:text-4xl">
               We design and build <span className="text-accent">AI products</span>, websites, and{" "}
               <span className="text-accent">SaaS platforms</span> end to end - from the first
               wireframe to production-ready infrastructure.
             </p>
 
-            <p className="relative mt-3 max-w-lg text-[15px] leading-relaxed text-ink-soft sm:mt-4 sm:text-base md:text-lg">
+            <p className="relative mt-3 max-w-lg text-[15px] font-bold leading-relaxed text-ink-soft sm:mt-4 sm:text-base md:text-lg">
               After launch, we stick around as your long-term technical partner, helping you scale,
               improve, and evolve your product.
             </p>

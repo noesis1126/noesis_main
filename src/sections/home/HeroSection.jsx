@@ -3,7 +3,7 @@ import { ArrowUpRight, CheckCircle2 } from "lucide-react";
 import { NavLink } from "react-router-dom";
 import { COMPANY_NAME, TAGLINE } from "../../data/siteData.js";
 
-const trustPoints = ["Senior team only", "Fixed-scope estimates", "Ship in weeks, not quarters"];
+const trustPoints = ["Senior team only", "Fixed-scope estimates", "Agile Methodology"];
 
 export default function HeroSection() {
   return (
