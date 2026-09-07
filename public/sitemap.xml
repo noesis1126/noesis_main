@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- Core pages -->
+  <url>
+    <loc>https://www.noesisstack.com/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://www.noesisstack.com/about</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.noesisstack.com/services</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.noesisstack.com/work</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.noesisstack.com/contact</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.noesisstack.com/privacy</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  <url>
+    <loc>https://www.noesisstack.com/terms</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.2</priority>
+  </url>
+
+  <!-- Service detail pages (from src/data/servicesData.js) -->
+  <url>
+    <loc>https://www.noesisstack.com/services/web-development</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.noesisstack.com/services/mobile-app-development</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.noesisstack.com/services/ui-ux-design</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.noesisstack.com/services/ecommerce-development</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.noesisstack.com/services/custom-software-development</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.noesisstack.com/services/ai-automation-solutions</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Work / case study detail pages (from src/data/projectsData.js) -->
+  <url><loc>https://www.noesisstack.com/work/gcon-nanded</loc><changefreq>yearly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.noesisstack.com/work/mane-mess</loc><changefreq>yearly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.noesisstack.com/work/herbs-magic</loc><changefreq>yearly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.noesisstack.com/work/maha-gps</loc><changefreq>yearly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.noesisstack.com/work/bunny</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.noesisstack.com/work/zoomtod</loc><changefreq>yearly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.noesisstack.com/work/it-is-my-town</loc><changefreq>yearly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.noesisstack.com/work/tarushpranaa</loc><changefreq>yearly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.noesisstack.com/work/flygen</loc><changefreq>yearly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.noesisstack.com/work/babaji-ki-buti</loc><changefreq>yearly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.noesisstack.com/work/sitara-it</loc><changefreq>yearly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.noesisstack.com/work/agrovedant</loc><changefreq>yearly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.noesisstack.com/work/mahipatsinh-foundation</loc><changefreq>yearly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.noesisstack.com/work/godrej-safety</loc><changefreq>yearly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.noesisstack.com/work/planet-crusader</loc><changefreq>yearly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.noesisstack.com/work/takjas</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.noesisstack.com/work/expedition-bali-tours</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
+
+  <!-- Strength detail pages (from src/data/strengthsData.js) -->
+  <url>
+    <loc>https://www.noesisstack.com/strengths/web-saas</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.noesisstack.com/strengths/mobile</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.noesisstack.com/strengths/full-stack</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.noesisstack.com/strengths/ai-ml</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.noesisstack.com/strengths/delivery</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.noesisstack.com/strengths/senior-team</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+</urlset>
